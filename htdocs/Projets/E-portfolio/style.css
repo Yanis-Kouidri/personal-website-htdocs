@@ -1,0 +1,312 @@
+@font-face 
+{
+    font-family: 'rubik';
+    src: url('./medias/fonts/Rubik/static/Rubik-Regular.ttf');
+}
+
+@font-face 
+{
+    font-family: 'playfair-display';
+    src: url('./medias/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf');
+}
+
+@font-face 
+{
+    font-family: 'montserrat';
+    src: url('./medias/fonts/Montserrat/static/Montserrat-Light.ttf');
+}
+
+@font-face 
+{
+    font-family: 'eb-garamond';
+    src: url('./medias/fonts/EB_Garamond/static/EBGaramond-Medium.ttf');
+}
+
+@media screen and (max-width: 1524px)
+{
+    nav 
+    {
+        font-size: 0.8em;
+    }
+
+    #about_me img
+    {
+        margin-top: 130px;
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+    .navbar
+    {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+body{
+    background-color: #dadada;
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    justify-content: flex-start;
+    margin:0;
+}
+
+
+/* La grosse boite qui englobe tout le menu de navigation : */
+nav 
+{
+    width: 100%;
+    z-index: 99;
+    background-color: #ffffff;
+
+    display: flex;
+    font-family: rubik;
+}
+
+/* La liste des menu déroulant (des onglets) */
+.navbar
+{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Tous les onglets pris un par un */
+.navbar .tab 
+{
+
+    border: solid black 2px;
+    text-align: center;
+    list-style-type: none;
+
+    padding: 7px 20px 7px 20px;
+    font-size: 150%;
+    height: 40px;
+}
+
+/* Le ul (menu déroulant) des sous onglets */
+.navbar li ul 
+{
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    font-size: 0.8em;
+    list-style-type: '- ';
+    background-color: #ffffff;
+}
+
+/* Le ul (menu déroulant) des sous onglets quand on a la souris sur un onglet*/
+.navbar li:hover ul 
+{
+    display: block;
+    overflow: visible;
+    background-color: #ffffff;
+    height: auto;
+    width: 100%;
+    margin-top: 9px;
+    border: black 1px solid;
+}
+
+#banniere_image
+{
+    background-image: url(medias/images/fond-flou.jpg);
+    height: 400px;
+    display: flex;
+}
+
+#banniere_image #banniere_nom
+{
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+    border: #ffffff solid 1px;
+    padding: 20px;
+}
+
+#banniere_image #banniere_nom #mon_nom
+{
+    font-size: 3em;
+    font-family: playfair-display;
+}
+
+.sous_titre
+{
+    font-size: 1.8em;
+    font-family: montserrat;
+}
+
+#welcome 
+{
+    margin: auto;
+    text-align: center;
+}
+
+p
+{
+    font-family: rubik;
+    font-size: 1.2em;
+}
+
+#description
+{
+    width: 60%;
+}
+.block
+{
+    
+    margin: auto;
+    padding-top: 20px;
+    text-align: justify;
+    line-height: 200%;
+    
+}
+
+.block a
+{
+    color: rgb(6, 4, 75)
+}
+
+.section
+{
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px;
+    width: 60%;
+}
+
+.section img
+{
+    max-width: 100%;
+}
+
+#about_me 
+{
+    min-height: 520px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: eb-garamond;
+    padding: 0;
+    
+}
+
+h1
+{
+    font-size: 3.5em;
+}
+
+h2
+{
+    font-size: 2.9em;
+    /* border: solid black 1px; */
+    margin-top: 20px;
+}
+
+h3
+{
+    font-size: 2.1em;
+    /* border: solid black 1px; */
+    margin-bottom: 20px;
+}
+
+#about_me p 
+{
+    width: 100%;
+}
+
+#about_me img
+{
+    float: right;
+    padding-left: 25px;
+}
+
+#video_cv iframe
+{
+    max-width: 75%;
+    margin: auto;
+    display: block;
+}
+
+#video_cv p
+{
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+#certificat
+{
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 600px;
+    padding: 20px;
+}
+
+.ilustration
+{
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 400px;
+    padding: 20px;
+}
+
+.photos
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.photos img
+{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#logo_html_css
+{
+    padding: 25px;
+    float: right;
+}
+
+footer
+{
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-top: black solid 1px;
+    background-color: #dadada;
+    margin-top: 20px;
+
+    width: 100%;
+}
+
+/* footer p
+{
+    border: black solid 1px;
+} */
+
+footer a, header a
+{
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover, header a:hover
+{
+    
+    color: rgb(3, 0, 201);
+}

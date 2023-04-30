@@ -1,0 +1,28 @@
+@font-face { /* Police utilisée sur le site, les autres sont là au cas où */
+	font-family: "Source Sans Pro" ;
+	src: url(./Polices/Source_Sans_Pro/SourceSansPro-Regular.ttf) format("truetype");	
+}
+
+@font-face { /* Import d'autres polices */
+	font-family: "PT Sans";
+	src: url(./Polices/PT_Sans/PTSans-Regular.ttf) format("truetype");
+}
+
+
+*{ /* Utilisation de Source Sans Pro pour tout le texte */
+	font-family: "Source Sans Pro";
+	color: beige;
+	
+}
+
+body {
+	margin-top: 30px ;
+	margin-bottom: 30px ;
+	margin-left: 20% ;
+	margin-right: 20% ;
+	background-color: rgb(25, 26, 27);
+}
+
+h1{
+	text-align: center ;
+}

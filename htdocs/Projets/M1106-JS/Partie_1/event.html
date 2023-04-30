@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+  <head>
+       <meta charset="UTF-8">
+       <title id='titre'>Event</title>
+  </head>
+  <body>
+      <form id="res" action="">
+        <div>
+        <label>Nom de domaine</label><input type="text" id="dom"><select id="ext">
+          <option id="c" value="commercial">com</option>
+          <option id="o" value="organisation">org</option>
+          <option id="e" value="education">edu</option>
+          <option id="f" value="france">fr</option>
+        </select>
+        </div>
+        <div>
+        IPV6<input name="ip" id="ipv6" value="6" type="radio" checked="true">IPV4<input id="ipv4" name="ip" value="4" type="radio">
+        </div>
+        <button id="send">envoi</button> 
+      </form>
+	  <h1 id="click" > Clique moi ! </h1>
+	  <h2 id="look1"> Regarde ! </h2>
+	  <h1 id="change" > Change ce que tu as écrit dans nom de domaine ! </h1>
+	  <h2 id="look2"> Regarde ! </h2>
+	  <h1 id="passe" > Passe moi dessus avec la souris ! </h1>
+	  <h2 id="look3" > Regarde ! </h2>
+	  <h1 id="url" > Une URL, clique ! </h1>
+	  <h1 id="msg" > Un message, clique ! </h1>
+	  
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+       </script>
+	   <script src="event.js"> </script>
+  </body>
+</html>

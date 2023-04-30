@@ -1,0 +1,1082 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Kubernetes</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="878c7454-0b96-4152-ac3b-a7930b98b886" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Kubernetes/logok8s.svg"/></div><h1 class="page-title">Kubernetes</h1></header><div class="page-body"><h1 id="bb95dd9f-61a2-4fce-aabc-e845ab90bfd1" class="">Introduction</h1><h2 id="24a8ef51-b5a8-477b-9a6e-4353343c6f60" class="">Qu’est-ce que Kubernetes ?</h2><p id="0e9e9bb4-2775-45b5-8a23-3b0d1c17bd61" class="">Kubernetes, souvent abrégé en K8s est une technologie d’orchestration de containers. Initialement développée par Google en 2014, elle a été offerte à la Cloud Native Computing Foundation à sa sortie en 2015. Kubernetes est souvent utilisé avec Docker en tant que “container runtime” (technologie qui permet de créer et de faire fonctionner le container) mais ce n’est pas une obligation. Il est par exemple tout à fait possible d’utiliser K8s avec Rocket ou CRIO qui sont des alternatives à Docker.</p><h2 id="3818e84b-2b58-4810-9234-d6a8818cbd1f" class="">Que permet-il ?</h2><p id="1f47c24b-f856-4121-b2f1-b08a0e7655a7" class="">Il permet principalement de gérer de manière automatique et organisé de grandes quantités de containers. Kubernetes peut absorber la monté en charge en créant automatiquement plus de containers et également en supprimer quand la charge diminue. L’exécution des containers peut être répartie sur différentes machines (virtuelles ou physique) appelées “<em>Nodes”</em>. Si une machine (<em>Node</em>) venait à ne plus fonctionner, K8s répartirait alors la charge sur les <em>Nodes </em>restants.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d6eac5ce-b382-44b0-bcb8-ee04bc948294"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Il est important de souligner qu’il ne faut pas utiliser Kubernetes pour tout et n’importe quoi. Le fait que cette solution soit “à la mode” rend son utilisation très courante et parfois dans des cas où ce n’est pas du tout nécessaire. En informatique, le mieux est souvent de faire au plus simple.</div></figure><h1 id="84d2fc35-4b32-4150-b007-21607f07b4a6" class="">Les objets Kubernetes :</h1><h2 id="df9923bc-07db-43c9-897a-1e9adebef1fe" class=""><details open=""><summary>Les pods</summary></details></h2><div class="indented"><p id="82d9d09a-a36e-452a-bf30-80ea20735a28" class="">Les <em>pods </em>sont la plus petite entité dans K8s, ce sont qui contiennent les containers. Il y a en général un container par <em>pod</em>. Dans certain cas il peut y en avoir plusieurs mais uniquement dans le cas où l’on aurait besoin de rajouter des containers auxiliaire, des “herper” au container principal. Il n’y aura donc jamais deux fois le même container dans un <em>pod</em>. Si l’on a besoin des plusieurs container identiques pour absorber de la charge alors on créera plusieurs pods. </p></div><h2 id="6be067f6-093b-411f-ad1e-bf5e572e844d" class=""><details open=""><summary>Les nodes</summary></details></h2><div class="indented"><p id="81a0d591-e3a0-4e93-8970-f8717ac08e1a" class="">Les <em>nodes </em>ou nœud en français sont des machines qui peuvent être virtuelle ou physique sur lesquelles Kubernetes est installé. Un <em>pod </em>s’execute alors sur un <em>node</em>.</p></div><h2 id="89dea90e-f895-424d-9fda-f8feb465a84c" class=""><details open=""><summary>Les Replica Sets</summary></details></h2><div class="indented"><p id="e5f37d90-edfc-4613-9db0-88a870f536c9" class="">Les <em>Replica Set</em> sont des objets qui permettent de maintenir un nombre défini de <em>pods </em>actifs. Un <em>Replica Set</em> est un contrôleur qui surveille constamment les <em>pods </em>et réagis en fonction du contexte. En général, un Replica Set ne surveille pas tous les pods mais uniquement un type de pods (ex: frontend) et donc offre une garanti de disponibilité sur un type de service. Si un ou plusieurs pods du type de service surveillé par le <em>Replica Set</em> venait à planter, alors il(s) serai(ent) automatiquement recréés. Les <em>pods </em>surveillé par le <em>Replica Set</em> sont ceux dont les labels correspondent avec ceux définis dans la partie <code>selector</code>du <em>Replica Set</em>. </p></div><h2 id="9b1251a4-1396-4a69-b086-b4bfe61f46a0" class=""><details open=""><summary>Les Deployments</summary></details></h2><div class="indented"><p id="fd6ee5fe-4140-477a-a177-d47ad94ee281" class="">Les <em>Deployments </em>ne sont rien d’autre que des <em>Replica Set</em> auxquels on a rajouté une couche pour permettre le déploiement d’une nouvelle version d’application. Les <em>Deployment </em>offrent la possibilité de mettre à jour notre application à chaud, de façon progressive et de manière transparente pour l’utilisateur (sans interruption de service). Pour cela il va progressivement supprimer les anciens <em>pods </em>pour et en créer des nouveaux avec la nouvelle image du container qu’on lui a spécifié. Il est également possible de faire machine arrière dans le cas où la nouvelle image ne fonctionnerai pas comme souhaité.</p></div><h2 id="23916b5a-fdf4-477c-b870-84cc61db458c" class=""><details open=""><summary>Les Services</summary></details></h2><div class="indented"><h3 id="49f40578-eabd-4408-a213-bead1b04783c" class="">Cluster IP</h3><p id="474cd4de-9a1e-485b-a443-fefd2d6665a7" class="">Les services de type Cluster IP permettent de créer un adresse IP virtuelle à l’intérieur du cluster pour pouvoir établir des communications entre différents services comme un ensemble de serveur web et un ensemble de base de données</p><h3 id="16a3228b-d414-4ccc-aa6a-7faceab1e09b" class="">NodePort</h3><p id="e98cb7a6-a605-440a-b1f0-c07f233a0f3d" class="">Le <em>NodePort </em>est un service qui écoute sur un port d’un Node (entre 30 000 à 32 767) et qui redirige le trafic vers un <em>pod </em>ou un ensemble de <em>pods </em>effectuant le même service (un R<em>eplica Set</em>)</p><p id="7211e101-716a-4ddd-a156-1a6430981187" class="">Cela permet à un utilisateur extérieur du Node d’accéder à une application à l’intérieur du <em>Node</em>. Par exemple si un <em>Pod </em>exécute un serveur web, le <em>NodePort </em>va orienter le trafic entrant sur le <em>Node </em>sur le port 30 080 (par exemple) vers le serveur web.</p><p id="e4638f9d-74b1-40a4-a2d9-f0f379a66d06" class="">S’il y a plusieurs Nodes dans un même Cluster, le service sera orienter le trafic, peu importe le Node visé.</p><p id="f98e80d3-2bfa-4eab-ab9d-0e11906deb4c" class="">En résumé, que l’on ait un Pod sur un Node, plusieurs Pods sur un Node ou plusieurs Pods sur plusieurs Nodes, le service sera s’adapter.</p><h3 id="9ba485fb-f811-463d-a008-a55fa50b85f6" class="">LoadBalancer</h3></div><h2 id="3b9485c7-5ff3-491e-89f8-db895d8a2134" class=""><details open=""><summary>Les Config Maps</summary></details></h2><div class="indented"><p id="0c9edb08-57ae-4609-ad10-a865f0fc5834" class="">Les <em>config maps</em> sont des objets permettant de stocker des variables d’environnement sous la forme <mark class="highlight-teal_background">clé</mark>-valeur pour pouvoir les injecter lors de la création d’un <em>pod</em> par exemple. Il est possible d’injecter toutes les variables stockées d’un objet <em>config map </em>dans un<em> pod</em> ou bien d’en sélectionner seulement certaine à l’aide de leur <mark class="highlight-teal_background">clé</mark>. Les <em>config maps</em> ne sont pas faits pour stocker des données sensibles comme des mots de passe. Pour les données sensible il faut utiliser des <em>secrets.</em></p></div><h2 id="2dd05b0b-5c1f-4b0d-8bef-b0a56d08fc8d" class=""><details open=""><summary>Secrets</summary></details></h2><div class="indented"><p id="b3fd04f6-b60e-4075-8416-63fe0fcccc04" class="">À l’instar des <em>config maps</em> les <em>secrets </em>sont des objets permettant des stocker des variables d’environnement sous la forme clé-valeur sauf que les <em>secrets </em>sont prévus pour stocker des données sensibles comme des mots de passe. Par défaut, les <em>secrets </em>ne sont pas chiffrés, seules les valeurs sont encodées en base 64. Les format base 64 permet seulement de masquer une donnée sensible mais ne permet pas de la protéger. Il est aussi simple d’encoder en base64 que de décoder du base 64. L’intérêt d’utiliser des <em>secrets </em>sans chiffrement est donc limité mais permet tout de même d’être plus discret par rapport à l’utilisation de <em>config maps</em>.</p></div><h2 id="df84f46a-33eb-4cbc-a5e0-4a28b765b8f4" class=""><details open=""><summary>Les Namespaces</summary></details></h2><div class="indented"><p id="0867a31c-35b6-4d9f-bbbd-ea9259e68c2d" class="">Les <em>Namespaces </em>permettent d’isoler des ensembles d’objets (<em>pods</em>, <em>services</em>, <em>deployments </em>etc) à l’intérieur d’un même <em>cluster</em>. Les noms d’objet doivent être uniques à l’intérieur d’un <em>Namespace </em>mais pas nécessairement entre tous les <em>Namespaces</em>. Deux <em>pods </em>peuvent avoir le même nom pourvu qu’ils soient dans deux <em>Namespaces </em>différents. </p></div><h2 id="df0764e1-1b77-4df9-88a8-4bc1a9401b04" class=""><details open=""><summary>Les Taints et Tolerations</summary></details></h2><div class="indented"><p id="b6cd22d2-8b23-4114-8fd0-72ed79c043e0" class=""><em>Taint </em>peut être traduit par contaminer ou infecter. Dans K8s quand on “<em>taint”</em> un <em>node, </em>on lui applique une caractéristique spéciale qui va empêcher, par défaut, les <em>pods</em> de se déployer dessus. C’est un peu comme si on irradiait ☢️ notre <em>node</em>, personne n’aurait envie de s’y exécuter. C’est là qu’interviennent les <em>tolerations</em>, des résistances aux contamination (“<em>taint</em>”).</p><p id="f0761702-c10e-47f6-98c1-4014f07be6a7" class="">Pour résumer si on applique une <em>Taint </em>: “irradié” à un node, aucun pod ne pourra s’exécuter sur ce <em>node</em> sauf les <em>pods </em>ayant une résistance (<em>Toleration</em>) à “irradié”.</p><p id="4c3f5e3b-1eba-4be2-8bce-44d1c4a8d777" class="">En pratique ce sont des pairs de clé-valeur qui sont comparées entre les <em>pods </em>et les <em>nodes, </em>empêchant soit l’attribution d’un <em>pod </em>sur un <em>node </em>(schedulling) soit l’exécution d’un <em>pod </em>sur un <em>node </em>(executing)</p></div><h2 id="c87dc6fa-a4f5-41d3-b6ef-fb411016ee51" class=""><details open=""><summary>Les Jobs</summary></details></h2><div class="indented"><p id="c0966ec4-8d2d-44fd-be34-2534bb5d2869" class="">Le <em>job </em>agit comme un <em>Replica Set</em> mais pour des containers effectuant une tâche finie. Là ou un serveur web doit rester actif le plus longtemps possible, une tache de calcul doit s’arrêter une fois que le calcul est fini. Un job va donc lancer un container dans un <em>pod</em>, attendre qu’il se termine en indiquant qu’il a réussi et le supprimer. Si le container échoue, le job va le relancer jusqu’à réussite ou jusqu’à atteindre un seuil définie. </p><p id="0f59ccd7-aa89-4a36-8b44-f549a778e947" class="">Il est possible de dire au <em>job </em>de lancer des containers jusqu’à un certain nombre de réussites, auquel cas il va lancer les containers un par un jusqu’à obtenir le nombre souhaité de réussites. Il est également possible de paralléliser l’exécution des <em>pods </em>et donc de ne pas les lancer un par un.</p></div><h2 id="8008a908-2d72-417b-a461-79852e6f7da1" class=""><details open=""><summary>Les CronJobs</summary></details></h2><div class="indented"><p id="d0ae04ac-f418-4e0e-87c1-bf31a4067c5d" class="">Un <em>CronJob </em>n’est rien d’autre qu’un job qui peut être planifier à la manière des <em>CrontTabs </em>sous Liunx. Cela permet de choisir la date et/ou l’heure à laquelle on veut qu’une tâche s’exécute ainsi que d’introduire une périodicité si l’on souhaite.</p></div><h2 id="b9f719f5-381a-4f4d-8788-82daab7fcb7f" class=""><details open=""><summary>Les Ingress</summary></details></h2><div class="indented"><p id="d63db960-3479-4419-b113-22e816a0c027" class="">Un objet <em>Ingress </em>permet de gérer les accès aux <em>Services</em> internes via une entrée externe. Typiquement, un <em>Ingress </em>est utilisé lorsque l’on a plusieurs applications web à l’intérieur de notre cluster, chaque application étant gérée par un <em>Service </em>de type <em>NodePort. </em>Alors, l’Ingress va permettre, à partir d’une même nom de domaine (FQDN).</p><p id="4c4bd8d4-c313-4db8-be2d-5dcf3d273603" class="">Ex : <a href="http://www.example.com">www.example.com</a> pointera vers l’adresse IP de l’<em>Ingress</em></p><p id="39ec49f0-6fc8-4d2f-9778-48c352573722" class="">Si l’on souhaite accéder au service <mark class="highlight-teal_background">VOD</mark> du site il faudra taper <a href="http://www.example.com">www.example.com</a>/<mark class="highlight-teal_background">VOD</mark> et alors l’<em>Ingress</em> transfèrera la requête vers le <em>Service </em>de type <em>NodePort</em> s’occupant de l’application web VOD.</p><p id="fa6d463d-11ae-4cb1-9562-81384f3b1944" class="">De même, si l’on souhaite accéder au service <mark class="highlight-red_background">live</mark> du site il faudra taper <a href="http://www.example.com">www.example.com</a>/<mark class="highlight-red_background">live</mark> et alors l’<em>Ingress</em> transfèrera la requête vers le <em>Service </em>de type <em>NodePort </em>s’occupant de l’application web VOD.</p><p id="6b625272-6818-4ba3-95d5-f2b7b961d248" class="">Les containers derrière l’application <mark class="highlight-teal_background">VOD </mark>et <mark class="highlight-red_background">live </mark>sont complètement différents, ils dépendent de <em>Services </em>et de <em>Deployments</em> différents, mais grâce à l’<em>Ingress</em>, on peut y avoir accès en passant par le même nom de domaine complètement qualifié (FQDN).</p></div><h2 id="79a00e47-edd8-4459-85f2-65d425f51fbc" class=""><details open=""><summary>Network Policy</summary></details></h2><div class="indented"><p id="34304a19-ffac-480d-b895-cf6a64999a8a" class="">Les <em>Network Policies</em> définissent un ensemble de règles d’accès réseaux s’appliquant sur un <em>pod </em>ou un groupe de <em><span style="border-bottom:0.05em solid">pods</span></em>. Ces règles peuvent aussi bien s’appliquer sur le trafic entrant (<em>ingress</em>) ou le trafic sortant (<em>egress</em>). Elles permettent par exemple de définir quel <em>pod </em>ou groupe de <em>pod </em>peuvent communiquer avec le <em>pod </em>ciblé par la <em>Network Policy</em>. Il est également possible de cibler des ports TCP ou UDP ainsi qu’une plage d’adresses IP.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="107438a6-5678-4cb2-b0c3-abbd8bf0d4e0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Par défaut, tous les <em>pods</em> d’un même <em>namespace</em> peuvent communiquer entre eux sans restriction.</div></figure><p id="e0cdd87b-5331-432f-b62d-996ecc212f97" class="">Un exemple concret d’utilisation de <em>Network Policies</em> serait pour le cas d’un serveur web et d’une base de données. Pour le serveur web, on autoriserait les requêtes venant de l’extérieur sur le port 80 ainsi que paquet sortant vers le <em>pod </em>de base de données. Pour le <em>pod </em>base de données, on autoriserait uniquement les paquets venant du <em>pod</em> serveur web sur un port précis.</p></div><h2 id="d1b380a9-d704-413d-a9d2-4a6fa302c155" class=""><details open=""><summary>Persistent Volume</summary></details></h2><div class="indented"><p id="a9e44023-4494-45c5-a4db-8b40982848d2" class="">Les <em>Persistent Volumes</em> sont un type de ressource comme les <em>Pods </em>par exemple. Ils définissent un espace de stockage qui pourra être utilisé par des <em>Pods</em>. Les <em>Pods </em>et les <em>PV </em>(<em>Persistent Volumes</em>) sont indépendant même s’ils sont liées. Si l’un des deux est supprimé, l’autre ne le sera pas. </p><p id="b30480d8-d55e-49b9-942c-c1c8d17e22d9" class="">Ex : Si je supprime le <em>Pod </em>qui utilise un <em>PV</em>, le <em>PV </em>ne sera pas supprimé et les données écrites dessus ne seront pas perdues.</p><p id="259ad645-e0cd-4c85-9f0f-1629343c611f" class="">Il existe plusieurs types de Volume qui peuvent être définis dans le PV selon le besoin (emptyDir, nfs, hostPath etc).</p></div><h2 id="2ade839d-fc82-4802-8e62-7fa3b2633a6c" class=""><details open=""><summary>Persistent Volume Claim</summary></details></h2><div class="indented"><p id="c20b752e-87c5-42f1-9f05-d8e7c975c8df" class="">Là où le PV permet de stocker des données, le PVC (Persistent Volume Claim) est une ressource qui permet de formuler une demande de stockage. Cette demande sera alors attribuée à un PV qui correspond aux exigences de la demande.</p><p id="f7ddc06a-7c8e-40fc-810d-ff929d82428f" class="">Dans les exigences de la demande, on retrouve bien sur la taille souhaitée (50Mo, 10Go, etc), le mode d’accès (lecture seulement, lecture et écriture une fois, lecture et écriture plusieurs fois) ainsi que d’autres demandes plus spécifiques.</p></div><h2 id="a46564a0-6b4e-4998-935b-8ac24d128e0e" class=""><details open=""><summary>Role</summary></details></h2><div class="indented"><p id="e2fce107-3ba4-4843-b99a-1a296b020b30" class="">Les Roles font partie du RBAC (Role-Based Access Control). Ils permettent de définir quel utilisateur peut faire quoi. Un même Role, peut être attribué à différent utilisateur, cela évite de définir les mêmes règles pour plusieurs utilisateur ainsi que d’ajouter de la sémantique grâce au nom du Role (Ex : “Dev”).</p></div><p id="a63d7eca-e68d-4ff2-83e0-c7f79a3becff" class="">
+</p><h1 id="14e9fb23-3391-4b8c-a237-9c3083b1d05b" class="">La définition d’objet en YAML :</h1><h2 id="54dea8f6-80de-468a-b132-0eb9bf45eff1" class=""><details open=""><summary>Pod</summary></details></h2><div class="indented"><pre id="8ef332d9-cc3a-4772-8d71-8e35626148d0" class="code"><code>apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: mon_pod
+  labels:
+    type: front-end
+    app: mon_app
+
+spec:
+# Si un container crash, doit-il être redémarré ?
+  restartPolicy: Never 
+
+# Liste des containers étant lancés un par un avant l&#x27;execution des containers classique
+# Ils s&#x27;executent, font leur tâche et meurent.
+# Si un de ces containers échoue, tout le pod restart jusqu&#x27;à ce que tous les inits réussicent
+  initContainers:  # non obligatoire
+    - name: before-start
+      image: busybox
+      command: 
+        - &quot;sh&quot;
+        - &quot;-c&quot;
+# &#x27;sh -c&#x27; veut dit exécute la commande suivant avec &#x27;sh&#x27;
+        - &quot;sleep 3600&quot;
+
+# Définition des containers : (fils de spec)
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 8080
+
+# Pour monter des volumes dans le container
+      volumeMounts:
+        - mountPath: /opt
+          name: volume1
+
+# Pour passer des varaibles d&#x27;environnement codées en dur :
+      env:
+        - name: REMOTE_DB
+          value: mySql.fr
+        - name: PASSWORD_DB
+          value: 123SqlMy
+# Pour passer une varaible d&#x27;environnement depuis un config map :
+        - name: IP_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: config_map_name  # Nom du config map
+              key: IP_ADDR   # Clé dans le config map
+
+# Pour passer toutes les varaibles d&#x27;environnement définies dans une ConfigMap :
+      envFrom:
+        - configMapRef:
+            name: config-map-db
+
+# Pour permettre de lancer le container en tant que user et non root
+      securityContext:  
+        runAsUser: 1000  # User ID. Sans cette ligne l&#x27;utilisateur est root
+        capabilities: # Pour ajouter ou retirer des droits
+          add: [&quot;MAC_ADMIN&quot;]
+          drop: [&quot;SYS_LOG&quot;]
+
+# Pour définir quand le container est prêt (prêt a répondre aux requêtes par exemple)
+      redinessProve:
+# Test HTTP :
+        httpGet:
+          path: /api/ready
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 5
+        failureThreshold: 8  # seuil
+# Test de socket TCP :
+        tcpSocket:
+          port: 3306
+# Test d&#x27;exécution de commandes :
+        exec:
+          command:
+            - cat
+            - /app/is_ready
+
+# Pour définir quand le container est vivant (capable de répondre aux requêtes par exemple)
+      livenessProve:
+# Test HTTP :
+        httpGet:
+          path: /api/ready
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 5
+        failureThreshold: 8  # seuil
+# Test de socket TCP :
+        tcpSocket:
+          port: 3306
+# Test d&#x27;exécution de commandes :
+        exec:
+          command:
+            - cat
+            - /app/is_ready
+
+        resources:
+          requests:
+            memory: &quot;64Mi&quot;
+            cpu: &quot;250m&quot;
+          limits:
+            memory: &quot;128Mi&quot;
+            cpu: &quot;500m&quot;
+
+# Taint et tolerations :
+# NB : &quot;tolerations:&quot; est au même niveau que container, c&#x27;est un fils de spec
+  tolerations:
+    - key: &quot;spray&quot;
+      operator: &quot;Equal&quot;
+      value: &quot;mauve&quot;
+      effect: &quot;NoSchedule&quot;
+
+# Node Selectors :
+  nodeSelector:
+    size: medium # NB: size: medium n&#x27;est qu&#x27;une paire clé valeur. Elle doit correspondre aux labels d&#x27;un pods
+
+# Node Affinity, a bit more complicated but more precise.
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      # Ou preferredDuringSchedulingIgnoredDuringExecution:
+      # Ou requiredDuringSchedulingRequiredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+            - key: size
+	            operator: In # Ou InNot Ou Exists ( si Exists, ne pas mettre values )
+	            values:
+                - Medium
+	
+# Volumes, fils de spec:
+  volumes:
+# Directement sur l&#x27;hote :
+    - name: test-volume
+      hostPath:
+      # Chemin du répertoire sur l&#x27;hote
+        path: /data
+      # Optionnel :
+        type: Directory
+# En utilisant un persistentVolumeClaim (PVC)
+    - name: volume1
+      persistentVolumeClaim:
+        claimName: myclaim
+    - name: cache-volume
+        emptyDir:
+          sizeLimit: 500Mi</code></pre></div><h2 id="a86fad58-d4bc-4157-a04e-e067d918e62f" class=""><details open=""><summary>Replica Set</summary></details></h2><div class="indented"><pre id="37e93a32-e41f-42f8-9a4f-049d9ec220c7" class="code"><code>apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: monApp-replicaSet
+	labels:
+		app: monApp
+		type: front-end
+spec:
+	replicas: 5
+  selector:
+    matchLabels:  # Doivent être les mêmes que dans la définition du pod
+			app: monApp
+			type: part1
+  template:
+		## START OF POD DEFINITION ##
+    metadata:
+			name: monApp-pod
+			labels:
+				app: monApp
+				type: part1
+			spec:
+				containers:
+					- name: nginx-container
+						image: nginx
+		## END OF POD DEFINITION ##</code></pre></div><h2 id="fa4f0e4a-de42-4443-97c5-613d83df0304" class=""><details open=""><summary>Deployment</summary></details></h2><div class="indented"><p id="c63d4594-2b29-42cd-b31e-855d02e22b1c" class="">Très similaire à la définition du Replica Set</p><pre id="1fe19473-3ed2-4193-80ed-e7144321dbc0" class="code"><code>apiVersion: apps/v1
+
+kind: Deployment
+
+metadata: 
+  name: monApp-deployment
+	labels:
+		app: monApp
+		type: front-end
+
+spec:
+	replicas: 5
+
+  selector:
+    matchLabels:  # Doivent être les mêmes que dans la définition du pod
+			app: monApp
+			type: part1
+
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+
+  template:
+		## START OF POD DEFINITION ##
+    metadata:
+			name: monApp-pod
+			labels:
+				app: monApp
+				type: part1
+			spec:
+				containers:
+					- name: nginx-container
+						image: nginx
+		## END OF POD DEFINITION ##</code></pre></div><h2 id="c00dd789-f154-4d60-ac83-e3051bde33cc" class=""><details open=""><summary>Config Map</summary></details></h2><div class="indented"><pre id="c1ef68ca-9eb0-4e90-bfb8-97fa1b9c4d2e" class="code"><code>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-app-config-map
+data:
+	DB_HOST: sql.fr
+	DB_PASSWORD: 1234
+  IP_ADDR: 192.168.1.1</code></pre></div><h2 id="c67feab2-5b01-4626-aa31-4f4c3f5539f2" class=""><details open=""><summary>Job</summary></details></h2><div class="indented"><pre id="c648a47d-aed1-4983-9ed6-12bb5c9f0112" class="code"><code>apiVersion: batch/v1
+
+kind: Job
+
+metadata:
+  name: calcul
+
+spec:
+	completions: 5  # Nombre de fois que l&#x27;on souhaite que le container réussisse
+	parallelism: 4 # Nombre de container pouvant être exécutés en même temps
+  template:
+    spec:
+      containers:
+      - name: ubuntu
+        image: ubuntu
+        command: [&quot;expr&quot;,  &quot;55&quot;, &quot;+&quot;, &quot;25&quot;]
+      restartPolicy: Never  # Si le container se termine en réussissant alors il ne sera JAMAIS redémarrer
+
+  backoffLimit: 4  # Par défaut c&#x27;est 6</code></pre></div><h2 id="5788c423-7b9c-4c16-b2b3-178e10581791" class=""><details open=""><summary>CronJob</summary></details></h2><div class="indented"><pre id="d5c3878f-dc1b-41ba-9be1-c685b0211fb8" class="code"><code>apiVersion: batch/v1
+
+kind: CronJob
+
+metadata:
+  name: hello
+
+spec:
+  schedule: &quot;* * * * *&quot;
+  jobTemplate:
+# Début de la défintion du Job
+    spec:
+      template:
+# Début de la défintion du pod
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            command:
+            - /bin/sh
+          restartPolicy: Never
+# Fin de la défintion du pod
+# Fin de la défintion du Job</code></pre></div><h2 id="2d1e3e21-3c1b-48d3-9d51-60549fb75c7d" class=""><details open=""><summary>Service</summary></details></h2><div class="indented"><pre id="1dffce1b-6243-46ce-ac96-42ff190d09d8" class="code"><code>apiVersion: v1
+
+kind: Service
+
+metadata: 
+  name: webapp-service
+
+spec:
+  type: NodePort  # ou ClusterIP ou LoadBalancer
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30080  # uniquement si type = NodePort et non obligatoire 
+  selector:  # Pods visés par le service :
+    app: webapp
+    type: frontend</code></pre></div><h2 id="309a6631-e5c3-4f35-84fa-fc19f9104b10" class=""><details open=""><summary>Ingress</summary></details></h2><div class="indented"><pre id="0692f0d9-ca59-411b-b5b3-bc0a2c4703fb" class="code"><code>apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+
+metadata:
+  name: minimal-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+spec:
+  ingressClassName: nginx-example
+
+  rules:
+  - http:
+      paths:
+      - path: /testpath
+        pathType: Prefix
+
+        backend:
+          service:
+            name: test
+            port:
+              number: 80</code></pre></div><h2 id="6112171b-a89e-4020-85e6-f1603f5a0b53" class=""><details open=""><summary>Network Policy</summary></details></h2><div class="indented"><pre id="0581f9b0-9896-4134-b5ad-51a8306d8815" class="code"><code>apiVersion: networking.k8s.io/v1
+
+kind: NetworkPolicy
+
+metadata:
+  name: test-network-policy
+  namespace: default
+
+spec:
+  podSelector:
+    matchLabels:
+      role: db
+
+  policyTypes:
+    - Ingress
+    - Egress
+
+  ingress:
+    - from:
+        - ipBlock:
+            cidr: 172.17.0.0/16
+            except:
+              - 172.17.1.0/24
+
+        - namespaceSelector:
+            matchLabels:
+              project: myproject
+
+        - podSelector:
+            matchLabels:
+              role: frontend
+
+      ports:
+        - protocol: TCP
+          port: 6379
+
+  egress:
+    - to:
+        - ipBlock:
+            cidr: 10.0.0.0/24
+
+      ports:
+        - protocol: TCP
+          port: 5978</code></pre></div><h2 id="3c26852c-727e-405c-862e-8c8879cec526" class=""><details open=""><summary>Persistent Volume</summary></details></h2><div class="indented"><pre id="f12495f7-7dac-4588-b833-679b71e6f1d9" class="code"><code>apiVersion: v1
+
+kind: PersistentVolume
+
+metadata:
+  name: pv
+
+spec:
+  capacity:
+    storage: 5Gi
+
+  accessModes:
+    - ReadWriteMany
+
+  hostPath:
+      # Chemin du répertoire sur l&#x27;hote
+      path: /data
+      # Optionnel :
+      type: Directory
+
+# Optionnel :
+  volumeMode: Filesystem
+# Optionnel :
+  storageClassName: slow
+# Optionnel :
+  persistentVolumeReclaimPolicy: Recycle </code></pre></div><h2 id="082caa5c-fd1a-48e6-84c0-b7ddf9c4777e" class=""><details open=""><summary>Persistent Volume Claim</summary></details></h2><div class="indented"><pre id="48b675f7-87ce-4576-b685-2f99088e4361" class="code"><code>apiVersion: v1
+
+kind: PersistentVolumeClaim
+
+metadata:
+  name: myclaim
+
+spec:
+  accessModes:
+    - ReadWriteMany
+
+  resources:
+    requests:
+      storage: 8Gi
+
+  storageClassName: slow
+</code></pre></div><h2 id="ce97eadd-e6e3-483f-9383-3549f55d3100" class=""><details open=""><summary>Storage Class</summary></details></h2><div class="indented"><pre id="928b2d4f-fb58-4771-a993-a1248323e37c" class="code"><code>apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard
+provisioner: kubernetes.io/no-provisioner
+reclaimPolicy: Retain
+volumeBindingMode: Immediate</code></pre></div><h2 id="b6c8b46f-dc91-4353-b770-854fa809f889" class=""><details open=""><summary>Role</summary></details></h2><div class="indented"><pre id="4f139eaf-4913-4dc7-b748-e0e0b71f0d45" class="code"><code>apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: pod-reader
+rules:
+- apiGroups: [&quot;&quot;] # &quot;&quot; indique le group API coeur 
+# A accès à :
+  resources: [&quot;pods&quot;] 
+# Peut executer :
+  verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]  </code></pre></div><h2 id="10c8562c-7caa-46ab-b4a4-60a8484b229e" class=""><details open=""><summary>Role Binding</summary></details></h2><div class="indented"><pre id="8210509b-a93a-40f6-9307-24fb0d595592" class="code"><code>apiVersion: rbac.authorization.k8s.io/v1
+# This role binding allows &quot;jane&quot; to read pods in the &quot;default&quot; namespace.
+# You need to already have a Role named &quot;pod-reader&quot; in that namespace.
+kind: RoleBinding
+metadata:
+  name: read-pods
+  namespace: default
+subjects:
+# You can specify more than one &quot;subject&quot;
+- kind: User
+  name: jane # &quot;name&quot; is case sensitive
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  # &quot;roleRef&quot; specifies the binding to a Role / ClusterRole
+  kind: Role #this must be Role or ClusterRole
+  name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io</code></pre></div><p id="298202fc-fda7-45a5-bea1-799fd1f81e0f" class="">
+</p><h1 id="4b28be1c-5414-491a-b738-9c12d5395562" class="">Les commandes kubectl :</h1><h2 id="53c7a1bd-90eb-4d68-bcfc-dc6d1ca1f67d" class="">Les commandes générales</h2><h3 id="6c273f5a-7429-4e8d-a932-a8a87ffa63e5" class="">Kubectl get</h3><p id="e6e7e518-5beb-4cee-811f-3cddc149e385" class="">Pour lister un type d’objet :</p><p id="6cda1b8e-766e-414c-aa5d-c908668b6479" class=""><code>kubectl get &lt;objet&gt;</code></p><p id="9d98229b-a429-4827-8e39-a89acc4fc134" class="">Ex :<code>kubectl get pod</code></p><p id="d8ac26be-9caa-48cf-b74c-f6272b23272c" class="">NB : affiche les objet dans le <em>Namespace</em> par défaut, si besoin spécifier le <em>Namespace </em>à l’aide de l’argument <code>-n &lt;namespace&gt;</code></p><p id="a2ba875f-eaf5-4719-8f75-02e6de33da52" class="">Pour lister tous les objets :</p><p id="e9a076e8-510f-461e-a6c6-13938ff854dd" class=""><code>kubectl get all</code></p><p id="abb1e580-9836-4c19-97b0-f04eb095bb9f" class="">Pour compter tous les pods (du <em>Namespace </em>par défaut) :</p><p id="2d2e729b-f3da-41f2-9544-7917eba373f0" class=""><code>kubectl get pod --no-headers | wc -l</code></p><p id="088459c8-6bde-466d-b0c9-8eedafdda6a3" class="">L’option <code>--no-headers</code> permet de ne pas afficher la ligne d’en-tête.</p><p id="9754c522-003e-46aa-93f0-23ed80f87609" class="">Pour sélectionner des objets en fonction de leurs labels :</p><p id="cc9c3813-331f-41d1-a71a-014ca9181195" class=""><code>kubectl get &lt;objet&gt; --selector &lt;cle1&gt;=&lt;valeur1&gt;,&gt;cle2&gt;=&lt;valeur2&gt;</code></p><p id="e19c21c2-8340-4b5e-acc6-05986c55dc87" class="">Ex :<code>kubectl get pod --selector tier=frontend,app=web</code></p><h3 id="4e2188be-6038-4e5d-a6db-e65ffd64be41" class="">Taint et Tolerations</h3><p id="ec80abfd-2e03-44c2-a9b4-846d4a2b31a1" class="">Pour affecter une <em>Taint</em> sur un Node :</p><p id="fb644873-6e0a-42d8-ac6a-599f086376b2" class=""><code>kubectl taint node &lt;nom_node&gt; &lt;cle&gt;=&lt;valeur&gt;:&lt;effet_taint&gt;</code></p><p id="811577b5-6f38-48b3-8a4f-09af134486a8" class="">Ex : <code>kubectl taint node node1 spray=mauve:NoSchedule</code></p><p id="01b04cd8-2fa9-4417-ad5c-e154cab78da6" class="">
+</p><p id="44e9e43c-82be-4e41-ab98-6b80a5fb3a09" class="">Pour retirer une <em>Taint </em>sur un Node : ( ⚠️ au moins “-” à la fin)</p><p id="9d26d107-1517-4a36-abf0-c879cbac7a0d" class=""><code>kubectl taint node &lt;nom_node&gt; &lt;cle&gt;=&lt;valeur&gt;:&lt;effet_taint&gt;-</code></p><p id="7dd4facc-9337-41a6-845a-955642f6a602" class="">Ex : <code>kubectl taint node node1 spray=mauve:NoSchedule-</code></p><h3 id="dc2e00bc-2dee-436a-8de0-2f7d0dd85a3a" class="">Node Selectors</h3><p id="4c48c78e-5c72-4b2f-bd8c-5938cc112c04" class="">Pour étiqueter un Node (ajouter un label) :</p><p id="c979ad01-b626-4455-8961-7815f4bbca47" class=""><code>kubectl label node &lt;nom_node&gt; &lt;cle&gt;=&lt;valeur&gt;</code></p><p id="5511d5af-19dd-40b8-a921-31a6368fb57c" class="">Ex : <code>kubectl label node node-2 size=medium</code></p><h3 id="d9dca321-91f8-4b28-9bd3-6dc44f3d6301" class="">Logs</h3><p id="dc18cfa7-7b99-4b47-89bc-73575f777f17" class="">Pour afficher les log d’un pod :</p><p id="ef28024f-ec49-447b-8f45-156bd0c78eb4" class=""><code>kubectl log &lt;nom_pod&gt;</code></p><p id="0558aa3b-cded-4627-a95c-81efec4dbaf3" class="">Ex : <code>kubectl log my-app-pod</code></p><p id="eff759ea-3c25-4d94-8953-24c5b0f708fc" class="">Utiliser l’option <code>-f</code> pour suivre les logs en direct.</p><p id="be94178f-48c4-46a3-bd49-ed36ca4fb20b" class="">Si le <em>pod </em>à plusieurs container alors il faut le spécifier après le nom du <em>pod</em></p><p id="41b564aa-0b56-4069-a4b7-93ace2767b49" class=""><code>kubectl log &lt;nom_pod&gt; &lt;nom_container&gt;</code> </p><p id="d84cf7b8-59ae-4531-9b26-b98d9a5bddcd" class="">Ex : <code>kubectl log my-app-pod app-container</code></p><h3 id="f8d62a92-025b-4624-928b-71a0ee4119aa" class="">Deployment</h3><p id="98511135-d2cc-4f50-909d-d2332b17be75" class="">Pour voir l’était du déploiement :</p><p id="bd8bbd06-c3eb-44da-b317-8b1b6e61aba6" class=""><code>kubectl rollout status deployment/&lt;nom_deploy&gt;</code></p><p id="47195cfb-3d6b-431c-9c4a-dbd0075af2ec" class="">Ex : <code>kubectl rollout status deployment/webapp-deploy</code></p><p id="ec9d4a0d-c88f-4197-a928-a4c6838bf5b9" class="">De même pour voir l’historique d’un déploiement :</p><p id="3a400959-5a56-4069-a0b4-f59c9f2a1147" class=""><code>kubectl rollout status deployment/&lt;nom_deploy&gt;</code></p><p id="493ca309-f55a-48ab-be04-66f0100435c7" class="">Si un déploiement se passe mal est qu’il faut faire machine arrière (annuler le rollout que l’on vient de faire) :</p><p id="6faf7a94-1eb2-4a76-aa8c-c7e71b28acad" class=""><code>kubectl rollout undo deployment/&lt;nom_deploy&gt;</code></p><h3 id="e3ad7a72-202c-45c6-b7fa-75bb998b8492" class="">Role</h3><p id="c164141c-ed96-4045-bc6f-643bf59a1786" class="">Si l’on souhaite vérifier les droits accordés à un utilisateur on peut utiliser l’option <code>--as &lt;user&gt;</code> qui permet d’exécuter une commande selon les droits d’un utilisateur.</p><p id="8ba2a2b3-4944-41f0-a5c4-3f540441ee0c" class="">Ex : <code>kubectl get pod --as dev-user</code></p><h3 id="0d891c00-40dc-48f1-b340-82342d089635" class="">Api Resources</h3><p id="2c47f2a6-d798-4fa4-b105-f120a42d7182" class="">Pour obtenir des informations sur les ressources kubernetes (pod, node, deployment etc).</p><p id="2ded0ba9-9bcc-45ee-9aa7-9defb11879bd" class=""><code>kubectl api-resources</code></p><p id="38b5eff5-9867-4b33-a2bf-ab19a73b901a" class="">Utile notamment pour connaitre l’apiversion (v1, apps/v1, etc).</p><h3 id="57b610ad-36f8-4821-aa93-2c8a0d2a2ab4" class="">Explain</h3><p id="76d17493-491b-48c7-8e5c-3cd3c8876bcc" class="">Pour obtenir des informations à propos d’une ressource précise :</p><p id="5c64debd-122f-4542-b70c-c58ff4cb1c99" class=""><code>kubectl explain &lt;nom_ressource&gt;</code></p><p id="91467f83-2c5f-4ee5-b47c-5344c59bbff2" class="">Ex : <code>kubectl explain jobs</code></p><h3 id="3448602b-c4c8-4747-a472-aebb9b84a22a" class="">Proxy</h3><p id="262c1408-e5a1-47eb-93ad-ddd8a76874ae" class="">Pour établir un proxy avec l’API de kubernetes il faut faire :</p><p id="9500b223-3344-4333-bcde-d71bb2a67473" class=""><code>kubectl proxy &lt;port&gt; &amp;</code></p><p id="83f2927f-7914-4ad3-901b-5bd8fa32f2cb" class="">Le <code>&lt;port&gt;</code> est le port sur lequel sera accessible l’API.</p><p id="1f1d1ce5-1188-47d0-bef1-52e6ee1db949" class="">Le <code>&amp;</code> permet de garder la main sur le shell.</p><p id="23a64529-cebd-463a-aabc-26e691ebfdc6" class="">Une fois fait, on peut interroger l’API avec des commande tel que <code>curl</code> :</p><p id="2e3ac4df-d587-492c-af00-8f577d0b5454" class=""><code>curl localhost:&lt;port&gt;/apis/&lt;nom_api&gt;</code></p><p id="0935dc11-e803-4741-a802-74deb6501aff" class="">Ex : <code>curl localhost:8001/apis/authorization.k8s.io</code></p><h3 id="6b7b339a-a07f-4f5a-b4d7-40f6a4a1eba1" class="">Label</h3><p id="ca2e520f-7489-4f15-9cb1-b5b4001c4fbb" class="">Pour ajouter un label à un objet :</p><p id="573e2839-611a-48f1-ba3c-a187e52ffd99" class=""><code>kubectl label &lt;obj&gt; &lt;nom_obj&gt; &lt;key&gt;=&lt;valeur&gt;</code></p><p id="3682b66e-2a40-415c-a7b3-2f3a9eb8056d" class="">Ex : <code>kubectl label node controlplane app_type=webapp</code></p><h3 id="e69f87f2-3b5f-4631-9f18-1c44384efd14" class="">Namespace</h3><p id="cf4b7aee-e6fb-4411-912b-809876c722d6" class="">Par défaut les commandes s’exécute dans le <em>Namespace</em> <code>default</code></p><p id="0db79ff2-9848-4b7c-a92e-4806dcec1385" class="">Pour changer le <em>Namespace</em> par défaut dans lequel les commandes vont s’exécuter :</p><p id="cf3d6fbe-d926-4ceb-a328-6f6e9557104a" class=""><code>kubectl config set-context --current --namespace=</code><mark class="highlight-blue_background"><code>&lt;nom_namespace&gt;</code></mark>
+Pour vérifier :
+<code>kubectl config view --minify | grep namespace:</code></p><p id="a84a3000-946a-46d0-8426-88bd34a0dd86" class="">Si la commande ci-dessus afficher le nom du <em>Namespace </em>désiré, c’est bon, les commandes vont maintenant s’exécuter dans le <em>Namespace </em><code><mark class="highlight-blue_background">&lt;nom_namespace&gt;</mark></code>.</p><h2 id="25ad0f79-a5fd-4a27-86d4-4c51a1d21061" class="">Les commandes impératives</h2><p id="1cc0812c-deb9-4990-966c-b9a1ed7b1b7b" class="">Ces commandes dites impératives permettre de créer des objets sans passer par des fichiers de définition en YAML. C’est utile notamment lors de passage de certification K8s où il faut être rapide.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="7d7508da-c491-4971-bb8f-99cb6de89d89"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">NB : l’option <code>--dry-run=client</code> permet de faire un coup à blanc, c’est à dire d’évaluer la commande mais de ne pas l’exécuter. Aucune ressource de sera créée avec cette option mais cela permet de voir si la commande tapée est correcte. Son usage peut être utile avec l’option <code>-o yaml</code> qui va afficher le fichier de définition YAML correspondant à la commande tapée.</div></figure><h3 id="eed81e95-4bf6-469a-9f96-30878eab333c" class=""><details open=""><summary>Pod</summary></details></h3><div class="indented"><p id="3f63c10c-aa88-493a-a142-02236e9221db" class=""><code>kubectl run &lt;nom_pod&gt; --image &lt;nom_image&gt; --port &lt;num_port_a_exposer&gt; --labels &quot;&lt;key1&gt;=&lt;value1&gt;,&lt;key2&gt;=&lt;value2&gt;&quot; --expose=true|false</code></p><p id="175ca14b-a234-4cbb-882f-ac000f444006" class="">Ex : <code>kubectl run pod-nginx --image nginx --port 8080 --labels &quot;tier=frontend,app=monapp&quot;</code></p><p id="e73a4aa9-94fb-4b2c-93bb-92f34715c3ec" class="">Si <code>--expose=true</code> alors la commande crée un service de type <em>ClusterIP </em>lié au <em>pod</em>. Cela nécessite l’argument <code>--port</code>.</p></div><h3 id="c8a100c5-560b-42fc-974d-0df54303b97a" class=""><details open=""><summary>Deployment</summary></details></h3><div class="indented"><p id="84ca7068-fcee-4f19-8466-c36b81c4bf10" class=""><code>kubectl create deployment &lt;nom_deploy&gt; --image &lt;nom_image&gt; --replicas &lt;nb_replicas&gt;</code></p><p id="95177b87-4a27-4606-acd1-e661736ce7a7" class="">Ex : <code>kubectl create deployment nginx --image nginx --replicas 5</code></p><p id="72de04c3-0c29-4b9c-b3f6-0ad31de6ab2c" class="">Pour changer (mettre à jour par exemple) l’image d’un <em>Deployment </em>:</p><p id="f822b2cd-5dad-4e4e-8598-5122aefc4b47" class=""><code>kubectl set image deployment/&lt;mon_deploy&gt; &lt;nom_container&gt;=&lt;nouvelle_image&gt;</code></p><p id="4cc4a67c-5916-4e27-bf09-bf49ebe5a1b1" class="">Ex : <code>kubectl set image deployment/my_app_deploy nginx=nginx:1.9.3</code></p></div><h3 id="a41b5be7-16b0-4f49-945c-e894740bce57" class=""><details open=""><summary>Service</summary></details></h3><div class="indented"><p id="55dad77d-f4e3-49e7-a197-0162d205a899" class=""><code>kubectl expose pod &lt;nom_pod_a_exposer&gt; --port &lt;numero_port_a_exposer&gt; --name &lt;nom_du_service&gt; --type &lt;type_de_service&gt;</code></p><h3 id="e3155b88-55a5-4b7c-8857-530d57b2b696" class="">NodePort :</h3><p id="512dd551-020b-432b-90a5-8eab95e7ddfd" class="">Ex : <code>kubectl expose pod nginx --port 80 --name nginx-service --type NodePort</code></p><p id="186d1ac4-5772-4f9c-994f-3a4d8fbd7627" class="">Les sélecteurs utilisés par le service créé seront les <em>labels </em>du <em>pod nginx</em>. Le numéro du <em><em><em><em><em><em><em><em><em>NodePort </em></em></em></em></em></em></em></em></em>sera choisi au hasard dans la plage allant de 30 000 à 32 767 (sans créer de conflit).</p><h3 id="8bad9b81-3ed2-4390-a471-f2ae3980b3b7" class="">ClusterIP :</h3><p id="d3f7c7d6-a19d-4280-a9da-3688c7a9e541" class="">Ex : <code>kubectl expose pod redis --port 6379 --name redis-service --type ClusterIP</code></p><p id="03dcfc8d-f805-46b5-a396-d417b1e58137" class="">
+</p></div><h3 id="f4699282-d524-4ea4-9d2c-d65aeb831213" class=""><details open=""><summary>Config Map</summary></details></h3><div class="indented"><p id="9bcfa05a-5191-41f2-ae5e-c51c37a9541f" class=""><code>kubectl create configmap &lt;nom_config_map&gt; [--from-file=&lt;source&gt;] [--from-literal=key1=value1] [--dry-run=server|client|none] [options]</code></p><p id="799a86a7-10e3-4028-83ee-90494ca09d5b" class="">Ex : <code>kubectl create configmap db-configMap --from-literal=HOST=mysql.fr --from-literal=PASSWORD=1234mySql</code></p></div><h3 id="c91d06f6-5584-4557-9039-33b566b38a8d" class=""><details open=""><summary>Ingress</summary></details></h3><div class="indented"><p id="63a3a489-48a6-48c3-bdd1-cba3b35c5573" class=""><code>kubectl create ingress &lt;nom_ingress&gt; --rule=&quot;&lt;host&gt;/&lt;path&gt;=&lt;service&gt;:&lt;port&gt;&quot;</code></p><p id="d791643a-668e-40e4-b131-814bc5f8738b" class="">Ex : <code>kubectl create ingress test-ingress --rule=&quot;www.example.com/store*=wear-service:80&quot;</code></p></div><h3 id="c23b909c-8891-4571-a06f-20d28c75ddc6" class=""><details open=""><summary>Role</summary></details></h3><div class="indented"><p id="36d0ca7b-2de4-4465-a9a9-6beeb654005d" class=""><code>kubectl create role &lt;nom_role&gt; --verb=&lt;verb1&gt;,&lt;verb2&gt;,&lt;verb3&gt; --resource=&lt;resources1&gt;,&lt;resource2&gt;</code></p><p id="4c09d8b8-c118-45ae-8845-6f1bc20dcacc" class="">Ex : <code>kubectl create role app-dev --verb=get,create,delete --resource=pods</code></p></div><h3 id="dedef38a-ad53-4e39-84f2-1acbf787fd2c" class=""><details open=""><summary>Role Binding</summary></details></h3><div class="indented"><p id="92098964-56bd-4ba8-ad2d-1918eb22ed93" class=""><code>kubectl create rolebinding &lt;nom_du_binding&gt; --role=&lt;nom_role&gt; --user=&lt;nom_user&gt;</code></p><p id="fb9bd4ab-f03c-4634-b2c5-6c9cfaf4a0fa" class="">Ex : <code>kubectl create rolebinding app-dev-binding --role=app-dev --user=user-dev</code></p></div><p id="ee9474e5-36c9-4a3e-a095-76197198c178" class="">
+</p><h1 id="93dca4af-575f-4d6c-94d4-537f5c27f092" class="">Autres </h1><h2 id="871fef85-c011-410e-9c4d-b4dc9df53b13" class="">Apiserver :</h2><p id="edde3069-b666-4a93-b339-d36d8a4954b1" class="">Pour obtenir des information sur le kube-apiserver :</p><p id="84fd4e1b-74ae-4946-a8ad-ff9292d1aa40" class=""><code>cat /etc/kubernetes/manifests/kube-apiserver.yaml</code></p><h2 id="ce66bdff-000d-4f96-8eab-f51098b2708c" class="">Instances de kubernetes</h2><p id="8b7f089c-78fc-4fdf-b994-958241326bd7" class="">Pour obtenir des informations sur une instance de kubernetes :</p><p id="e549a17c-d531-494f-9436-fcf4a3be73a4" class=""><code>ps -aux | grep &lt;une_instance&gt;</code></p><h2 id="bff9e3e8-29a6-4c73-887d-0d3f1e40eb8d" class="">Obtenir la release de l’OS</h2><p id="5c246187-fe7e-4e1e-a705-8547fdbc745d" class="">Pour savoir de quelle distribution de Linux il s’agit :</p><p id="90325a93-e06b-41e1-b64f-adf1c60bcdb4" class=""><code>cat /etc/*release*</code></p><h2 id="2e0832b7-17ce-4686-90ac-50f8dfef8d39" class="">Tests sur containers</h2><p id="82553e61-52c1-4d02-987d-dbba7d946e98" class="">Pour s’attacher au shell d’un container :</p><p id="09c48592-5d47-48fb-a296-8916831274e3" class=""><code>kubectl exec -it &lt;nom_pod&gt; -- &lt;nom_shell&gt;</code></p><p id="0891fd9e-75c4-452f-90ae-22982e431e78" class="">Ex : <code>kubectl exec -it webapp -- sh</code></p><h3 id="60ccd696-d975-4b75-b360-ae7b3830f84a" class="">Tester une connexion avec ports</h3><p id="9b4566d9-54b3-48b0-a309-25157be335a3" class="">Une fois attaché à au shell d’un container :</p><p id="0a0081d6-e7e1-4951-900b-84fa0387ae49" class=""><code>nc -vzw 2 &lt;IP_ou_nom_service/pod&gt; &lt;port&gt;</code></p><p id="96b6a638-6c19-4169-adfe-ee9f6a2c1c87" class="">Ex : <code>nc -vzw 2 my-service 80</code></p><p id="5c6b65d6-ba09-4b76-bbd4-0780d1ac5493" class="">Je teste si, depuis le pod sur lequel je suis, je peux contacter le service my-service sur le port 80 (le service va sans doute me rediriger vers un pod)</p><p id="f474f383-33fb-40e5-84b6-77647bb30578" class="">L’argument <code>-v</code> indique que l’on veut une réponse verbeuse.</p><p id="a411dc12-c812-4ec3-8b1d-5d0b79ee9e88" class="">L’argument <code>-z</code> indique que l’on veut uniquement tester l’ouverture d’un port sans envoyer de donnée.</p><p id="8483579f-c11e-4b94-9c7f-7f00be8c35c2" class="">L’argument <code>-w 2</code> indique qu’on considère que le port n’est pas accessible au bout de deux secondes sans réponse. (timout = 2s)</p><p id="a8f0806a-73d7-432d-ac0f-cb9c0f9dc818" class=""> </p></div></article></body></html>

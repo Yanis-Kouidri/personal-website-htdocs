@@ -1,0 +1,167 @@
+
+
+*{
+	font-family: Verdana ;
+		
+}
+
+.titre{
+	text-align: center ;
+}
+
+
+p{
+	font-size: 18px ;
+	color: black ;
+}
+
+h1{
+	font-size: 28px ;
+	color: black ;
+}
+
+h2{
+	font-size: 24px ;
+	color: black ;
+}
+
+.justify{
+	text-align: justify ;
+}
+
+
+body {
+	margin-top: 30px ;
+	margin-bottom: 30px ;
+	margin-left: 20% ;
+	margin-right: 20% ;
+	background-image:url("Data/nuage.jpg");
+}
+
+a:hover{
+	color: #0F16F5 ;
+}
+
+a:active {
+	color: #FC0605 ;
+}
+
+a:visited{
+	color: #4011C2;
+}
+
+.nav{
+	border-width: 3px ;
+	border-color: black ;
+	border-style: solid	;
+	background-color: #CBE1F9 ;
+	border-radius: 10px 10px ; 
+	
+}
+
+#first{
+	font-size: 20px ;
+}
+
+.center{
+	text-align: center ;
+}
+
+.form {
+	font-size: 24px ;
+}
+
+
+.cara{
+	margin-left: 480px ;
+	margin-top: 60px ;
+	
+	padding: 16px ;
+
+}
+
+tr, th{
+	border: 2px black solid ;
+	padding: 6px ;
+	padding-left: 20px ;
+	padding-right: 20px ;
+}
+
+tr, td{
+	border: 2px black solid ;
+	padding: 6px ;
+	padding-left: 20px ;
+	padding-right: 20px ;
+	
+}
+
+.float {
+	border: none ;
+	float: left ;
+	margin-right: 40px ;
+	margin-top: 70px ;
+}
+
+.titre_tab {
+	font-size: 24px ;
+}
+
+#yanis{
+
+height: 250px ;
+width: 335px ;
+
+}
+@media screen and (max-width: 1280px)
+{
+
+
+
+body{
+	margin-top: 30px ;
+	margin-bottom: 30px ;
+	margin-left: 10% ;
+	margin-right: 10% ;
+	background-image:url("Data/nuage.jpg");
+}
+
+.form {
+max-width: 300px ;
+min-width: 100px; 
+}
+
+#yanis {
+	
+	width: 90% ;
+    height: 90%; 
+	max-width:500px ;
+    max-height: 670px; 
+}
+
+.phone {
+	padding: 8% ;
+	
+}
+
+.float {
+	border: none ;
+	float: none ;
+	margin-right: 0px ;
+	margin-top: 0px ;
+
+}
+.cara{
+	margin-left: 0px ;
+	margin-top: 0px ;
+	
+	padding: 6px ;
+
+}
+
+.center{
+	text-align: center ;
+	max-width: 300px ;
+min-width: 100px; 
+}
+
+}

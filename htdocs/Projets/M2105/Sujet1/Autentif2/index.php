@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../../Outils/style.css" />
+		<title>M2105</title>
+	</head>
+	<body>
+		<!-- L'en-tête -->
+		<header>
+			<p>Module M2105 : Web Dynamique</p>
+		</header>
+				
+		<!-- Le contenu (1 seule section suffit) -->		
+		<section>
+			<h1>Sujet 1 - Exercice 3</h1>
+			<p>Veuillez vous identifier</p>
+
+			<?php
+			
+				echo " <strong>  {$_GET['Error']} </strong> ";
+
+			?>
+
+
+			<form method="POST" action="./connex.php"> <!-- la méthode d'envoi est POST et c'est envoyé à ./connex.php -->	
+				<p>	<label for="login">Login</label>
+					<input id="login" name="login" type="text" required autofocus/> <!-- autofocus : champs séléctioné par défaut dans le formulaire -->	
+				</p>
+				<p>	<label for="mdp">Mot de passe</label> <!-- Label permet de légender la case mot de passe -->	
+					<input id="mdp" name="mdp" type="password" required />
+				</p>
+				<p>	
+					<button id="envoi" name="envoi" type="submit" value="envoi">Connnexion</button> 
+				</p>
+			</form>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,5 @@
+Recherche toutes les occurences en fonction des mots tapés par l'utilisateur dans le but de trouver le produit en question.
+Si une catégorie est séléctionné, chercher uniquement dans cette catégorie.
+Si "uniquement validés" est coché rechercher uniquement les produits validés par un administrateur du site.
+Si il n'y en a pas, afficher un message indiquant que ce produit est inconnu et inviter l'utilisateur 
+à évaluer lui même le produit.

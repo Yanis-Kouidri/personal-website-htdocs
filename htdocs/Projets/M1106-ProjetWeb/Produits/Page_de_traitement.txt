@@ -1,0 +1,1 @@
+Afficher l'évaluation immédiatement sur la page du produit concerné à la suite de celle(s) déja présentes.

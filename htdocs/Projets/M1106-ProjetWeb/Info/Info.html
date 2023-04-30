@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8" />
+ 	<link rel="stylesheet" href="../feuille_style1.css" />
+	<title> Quoi acheter : À propos </title>
+</head>
+
+<body>
+
+<h1 class="titre" id="titre_propo"> À propos de ce site </h1>
+
+<header> 
+	<nav class="nav">
+		<ul>
+			<li> <a href="../Page_principale/page_principale.html" > Page principale </a> </li>
+			<li> <a href="../Info/Info.html" > À propos du site </a> </li>
+			<li> <a href="../Règle/Règles.html" > Règles du site </a> </li>
+			<li> <a href="../Produits/Produits.html" > Produits évalués </a> </li>
+		</ul>
+	</nav>
+</header>
+
+<nav class="index">
+<h2 id="index"> Index </h2>
+<ol>
+	<li> <a href=#what> Qu'est ce que ce site ? </a> </li>
+	<li> <a href=#who> Qui est derrière ce site ? </a> </li>
+	<li> <a href=#valeur> Quelle est la valeur ajoutée de ce site ? </a> </li>
+	<li> <a href=#remarque> Une remarque ou une suggestion à faire sur le site ? </a> </li>
+</ol>
+
+</nav>
+
+<h2 id="what"> Qu'est ce que ce site ? </h2>
+<div class="justify"> <p> Ce site est le résultat d'un projet étudiant, créé en décembre 2020,
+ il a pour but d'évaluer différents types de produits que l'on peut utiliser dans notre quotidien.
+Pour l'instant seul l'auteur de ce site peut évaluer un produit mais bientôt tous les visiteurs 
+seront libres de laisser une évaluation sur les produits déjà présents.  <p> </div>
+
+<h2 id="who"> Qui est derrière ce site ? </h2>
+
+<div class="justify"> <p>  Derrière ce site se trouve <a href="yanis_kouidri.html">Yanis Kouidri</a>, un étudiant
+en Réseaux et Télécommunications à l'IUT de Sophia-Antipolis. <p> </div>
+
+
+
+<h2 id="valeur"> Quelle est la valeur ajoutée de ce site ? </h2> <!-- Je me suis appliqué non ? -->
+<div class="justify"> <p>  Ce site permet à chacun de découvrir de nouveaux produits 
+ainsi que de se faire un avis. Les utilisateurs pourront laisser une évaluation sur le site
+sans aucune censure à partir du moment où l'évalutation respecte 
+les <a href="../Règle/Règles.html">règles</a> fixées par le site. Ce site n'a de lien, rémunéré ou non, avec aucune 
+entreprise, organisation, état, gouvernement, corporation etc... Le site est complétement indépendant et est a but
+non lucratif. En aucun cas le site ne modifira/supprimera/rajoutera un article/une évaluation sous demande d'un tiers, même si celui-ci
+propose des fonds.<p> </div>
+
+
+
+ 
+<br>
+
+<h2 id="remarque" class="center"> Une remarque ou une suggestion à faire sur le site ? </h2>
+
+
+<form method="post" action="suggestion.txt" class="center">
+	<p> Le créateur du site est à votre écoute </p>
+	<p>
+			<label for="nom"> Votre nom &gt; </label>
+			<input type="text" name="nom" id="nom" placeholder="Nom (32 lettres max)" size="32"/>
+	<br/>
+			<label for="prenom"> Votre prénom &gt; </label>
+			<input type="text" name="prenom" id= "prenom" placeholder="Prénom (32 lettres max)" 
+			size="32" maxlength="32" />
+	</p>
+	
+	<p>
+		<label for="sugg"> Quelle est votre suggestion ou votre remarque ? </label>
+	<br/>
+		<textarea name="sugg" id="sugg" class="form" rows="10" cols="90" maxlength="1500" 
+		placeholder="Expliquez en quelque lignes ce que vous souhaitez voir changer sur le site(1500 caractères max)">
+		
+		</textarea>
+	</p>
+	<input type="reset" value="Effacer" />
+	<input type="submit" value="Envoyer" />
+</form>
+
+
+ 
+ 
+<br>
+<footer>
+<nav> <a href="../Page_principale/page_principale.html"> Revenir sur la page principale </a> </nav>
+<nav> <a href="#titre_propo"> Remonter </a> </nav>
+
+<p class="center">
+	<a href="https://jigsaw.w3.org/css-validator/check/referer">
+		<img style="border:0;width:88px;height:31px"
+			src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="CSS Valide !" />
+    </a>
+
+    <a href="https://validator.w3.org/check?uri=referer"><img
+        src="https://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0!" height="31" width="88" /></a>
+
+	<a href="https://www.w3.org/WAI/WCAG1A-Conformance"
+		title="Explanation of Level A Conformance">
+		<img height="32" width="88" 
+        src="https://www.w3.org/WAI/wcag1A"
+        alt="Level A conformance icon, 
+        W3C-WAI Web Content Accessibility Guidelines 1.0"></a>
+</p>
+</footer>
+
+
+</body>
+</html>

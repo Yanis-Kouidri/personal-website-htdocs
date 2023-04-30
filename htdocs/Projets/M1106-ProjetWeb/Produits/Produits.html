@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../feuille_style1.css" />
+ 	<title> Quoi acheter : Les produits évalués </title>
+</head>
+
+<body>
+<h1 class="titre"> Les produits évalués </h1>
+<br>
+<header> 
+	<nav class="nav">
+		<ul>
+			<li> <a href="../Page_principale/page_principale.html" > Page principale </a> </li>
+			<li> <a href="../Info/Info.html" > À propos du site </a> </li>
+			<li> <a href="../Règle/Règles.html" > Règles du site </a> </li>
+			<li> <a href="../Produits/Produits.html" > Produits évalués </a> </li>
+		</ul>
+	</nav>
+</header>
+
+<h2> Les produits récemment évalués </h2>
+
+<nav>
+
+<ul>
+<li> <a href="Lave_linge_hublot.html" > Lave linge hublot Whirlpool </a> </li>
+<li> <a href="seche.html" > Remington Sèche-Cheveux Professionnel </a> </li>
+
+
+</ul>
+</nav>
+<br>
+<form class="form" id="res" action="recherche.txt"> 
+    <div class="center">
+        <label>Rechercher un produit : </label><input type="text" id="dom">  <select id="ext">
+        <option selected="selected" value="search-alias=aps">Toutes nos catégories</option>
+        <option value="search-alias=pets">Animalerie</option>
+        <option value="search-alias=automotive">Auto et Moto</option>
+        <option value="search-alias=luggage">Bagages</option>
+        <option value="search-alias=beauty">Beauté et Parfum</option>
+        <option value="search-alias=jewelry">Bijoux</option>
+        <option value="search-alias=diy">Bricolage</option>
+        <option value="search-alias=baby">Bébés & Puériculture</option>
+        <option value="search-alias=shoes">Chaussures et Sacs</option>
+        <option value="search-alias=kitchen">Cuisine & Maison</option>
+        <option value="search-alias=grocery">Epicerie</option>
+        <option value="search-alias=office-products">Fournitures de bureau</option>
+        <option value="search-alias=appliances">Gros électroménager</option>
+        <option value="search-alias=electronics">High-Tech</option>
+        <option value="search-alias=hpc">Hygiène et Santé</option>
+        <option value="search-alias=computers">Informatique</option>
+        <option value="search-alias=mi">Instruments de musique & Sono</option>
+        <option value="search-alias=garden">Jardin</option>
+        <option value="search-alias=toys">Jeux et Jouets</option>
+        <option value="search-alias=lighting">Luminaires et Eclairage</option>
+        <option value="search-alias=fashion">Mode</option>
+        <option value="search-alias=watches">Montres</option>
+        <option value="search-alias=sports">Sports et Loisirs</option>
+        <option value="search-alias=clothing">Vêtements et accessoires</option>
+        </select>
+    </div> 
+	<br>
+    <div class="center">
+		<input type="radio" id="all" name="drone" value="Tout"
+			checked>
+		<label for="all">Tout</label>
+	
+		<input type="radio" id="cert" name="drone" value="Validés">
+		<label for="cert">Validés</label>
+	
+		<input type="radio" id="wait" name="drone" value="En attente">
+		<label for="wait">En attente</label>
+	</div>
+	<br>
+	<div class="center">
+		<div class="phone">
+			<input type="reset" value="Effacer" />
+			<input type="submit" value="Envoyer" />
+		</div>
+	</div>
+</form>
+
+
+
+
+
+<footer>
+<nav> <a href="../Page_principale/page_principale.html"> Revenir sur la page principale </a> </nav>
+
+<p class="center">
+	<a href="https://jigsaw.w3.org/css-validator/check/referer">
+		<img style="border:0;width:88px;height:31px"
+			src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="CSS Valide !" />
+    </a>
+
+    <a href="https://validator.w3.org/check?uri=referer">
+	    <img src="https://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0!" height="31" width="88" /></a>
+
+	<a href="https://www.w3.org/WAI/WCAG1A-Conformance"
+		title="Explanation of Level A Conformance">
+		<img height="32" width="88" 
+        src="https://www.w3.org/WAI/wcag1A"
+        alt="Level A conformance icon, 
+        W3C-WAI Web Content Accessibility Guidelines 1.0"></a>
+</p>
+</footer>
+
+</body>
+</html>

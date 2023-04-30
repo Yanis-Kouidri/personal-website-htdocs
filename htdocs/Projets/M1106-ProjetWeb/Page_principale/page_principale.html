@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../feuille_style1.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<title> Quoi acheter : Home </title>
+</head>
+
+<body>
+<h1 class="titre" id="titre_princ"> Bienvenue sur Quoi Acheter </h1>
+<br>
+<header> 
+	<nav class="nav" id="nav_princ">
+		<ul>
+			<li> <a href="../Page_principale/page_principale.html" > Page principale </a> </li>
+			<li> <a href="../Info/Info.html" > À propos du site </a> </li>
+			<li> <a href="../Règle/Règles.html" > Règles du site </a> </li>
+			<li> <a href="../Produits/Produits.html" > Produits évalués </a> </li>
+		</ul>
+	</nav>
+</header>
+<br>
+
+<p id="first"> Vous venez pour la première fois sur ce site ? Venez faire un tour sur la page
+<a href="../Info/Info.html" > À propos du site</a> pour en savoir plus.   </p>
+
+<br>
+<h2> Les produits récemment évalués </h2>
+
+<nav>
+
+<ul>
+	<li> <a href="../Produits/Lave_linge_hublot.html" > Lave linge hublot Whirlpool </a> </li>
+	<li> <a href="../Produits/seche.html" > Remington Sèche-Cheveux Professionnel </a> </li>
+
+
+</ul>
+</nav>
+
+<h2> Vous souhaitez rechercher des évaluations sur un produit ? </h2>
+<form class="form" id="res" action="recherche.txt"> 
+    <div class="center">
+        <label>Rechercher un produit : </label> <input type="search" id="dom"> <select id="ext">
+        <option selected="selected" value="search-alias=aps">Toutes nos catégories</option>
+        <option>Animalerie</option>
+        <option>Auto et Moto</option>
+        <option>Bagages</option>
+        <option>Beauté et Parfum</option>
+        <option>Bijoux</option>
+        <option>Bricolage</option>
+        <option>Bébés & Puériculture</option>
+        <option>Chaussures et Sacs</option>
+        <option>Cuisine & Maison</option>
+        <option>Epicerie</option>
+        <option>Fournitures de bureau</option>
+        <option>Gros électroménager</option>
+        <option>High-Tech</option>
+        <option>Hygiène et Santé</option>
+        <option>Informatique</option>
+        <option>Instruments de musique & Sono</option>
+        <option>Jardin</option>
+        <option>Jeux et Jouets</option>
+        <option>Luminaires et Eclairage</option>
+        <option>Mode</option>
+        <option>Montres</option>
+        <option>Sports et Loisirs</option>
+        <option>Vêtements et accessoires</option>
+        </select>
+    </div> 
+	<br>
+    <div class="center">
+		<input type="radio" id="all" name="drone" value="Tout"
+			checked>
+		<label for="all">Tout</label>
+	
+		<input type="radio" id="certif" name="drone" value="Validés">
+		<label for="certif">Validés</label>
+	
+		<input type="radio" id="wait" name="drone" value="En attente">
+		<label for="wait">En attente</label>
+	</div>
+	<br>
+	<div class="center">
+        <input type="reset" value="Effacer" />
+		<input type="submit" value="Rechercher" />
+	</div>
+</form>
+<br>
+<h2> Vous souhaitez creer une page d'évaluation d'un produit ? </h2>
+
+<form method="post" action="new.txt" class="center">
+	<p> Veuillez remplir ce formulaire </p>
+	<p>
+			<label for="nom"> Votre nom &gt; </label>
+			<input type="text" name="nom" id="nom" placeholder="Nom (32 lettres max)" size="32"/>
+		<br/>
+			<label for="prenom"> Votre prénom &gt; </label>
+			<input type="text" name="prenom" id= "prenom" placeholder="Prénom (32 lettres max)" 
+			size="32" maxlength="32" />
+		<br/>
+			<label for="pseudo"> Votre pseudonyme &gt; </label>
+			<input type="text" name="nom" id="pseudo" placeholder="Pseudonyme (32 caractères max)" size="32"/>
+	</p>
+	
+	<p>
+		<label for="nomP"> Quel produit souhaitez vous évaluer ? </label>
+		<input type="text" name="nomProduit" id="nomP" placeholder="Nom complet du produit" size="32" required/>
+	<br/>
+		<label for="ref"> Quel est la référence de votre produit ? </label>
+		<input type="text" name="Référence" id="ref" placeholder="ex : ERFAD7889DDA" size="32"/>
+	</p>
+	
+	<p>
+		<textarea name="sugg" id="desc" class="form" rows="10" cols="90" maxlength="1500" placeholder="Écrivez ici votre évaluation"
+		required>
+		
+		</textarea>
+	</p>
+	<input type="reset" value="Effacer" />
+	<input type="submit" value="Envoyer" />
+</form>
+
+
+<footer>
+<nav> <a href="#titre_princ" > Remonter </a> </nav>
+
+<p class="center">
+	<a href="https://jigsaw.w3.org/css-validator/check/referer">
+		<img style="border:0;width:88px;height:31px"
+			src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="CSS Valide !" /></a>
+
+    <a href="https://validator.w3.org/check?uri=referer"><img
+        src="https://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0!" height="31" width="88" /></a>
+
+	<a href="https://www.w3.org/WAI/WCAG1A-Conformance"
+		title="Explanation of Level A Conformance">
+		<img height="32" width="88" 
+        src="https://www.w3.org/WAI/wcag1A"
+        alt="Level A conformance icon, 
+        W3C-WAI Web Content Accessibility Guidelines 1.0"></a>
+</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+  <head>
+       <meta charset="UTF-8">
+       <title id='titre'>Formulaire</title>
+  </head>
+  <body>
+      <form id="res" >
+        <div>
+        <label>Nom de domaine</label><input type="text" id="dom"><select id="ext">
+          <option id="c" value="commercial">com</option>
+          <option id="o" value="organisation">org</option>
+          <option id="e" value="education">edu</option>
+          <option id="f" value="france">fr</option>
+        </select>
+        </div>
+        <div>
+        IPV6<input name="ip" id="ipv6" value="IPv6" type="radio" checked="true">
+		IPV4<input name="ip" id="ipv4" value="IPv4" type="radio">
+        </div>
+         
+      </form>
+	  <button id="send">envoi</button>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+       </script>
+	   <script src="formulaireEnonce.js"> </script>
+  </body>
+</html>

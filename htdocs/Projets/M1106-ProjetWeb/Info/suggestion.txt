@@ -1,0 +1,3 @@
+Importer la suggestion dans un fichier texte pour que l'auteur du site puisse la lire et s'en inspirer pour améliorer le site web.
+Le nom et prénom de la personne ne sont pas obligatoire, ils sont juste la pour permettre à la personne d'être mentionnée
+si elle le souhaite et que sa remarque a permis d'améliorer le site web.
