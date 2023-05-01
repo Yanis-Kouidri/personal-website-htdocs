@@ -54,65 +54,73 @@ body{
 }
 
 
-/* La grosse boite qui englobe tout le menu de navigation : */
-nav 
-{
-    width: 100%;
-    z-index: 99;
-    background-color: #ffffff;
-
-    display: flex;
-    font-family: rubik;
-}
-
-/* La liste des menu déroulant (des onglets) */
 .navbar
 {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-
-    width: 100%;
-
-    justify-content: center;
-    align-items: flex-start;
-}
-
-/* Tous les onglets pris un par un */
-.navbar .tab 
-{
-
-    border: solid black 2px;
-    text-align: center;
-    list-style-type: none;
-
-    padding: 7px 20px 7px 20px;
-    font-size: 150%;
-    height: 40px;
-}
-
-/* Le ul (menu déroulant) des sous onglets */
-.navbar li ul 
-{
-    height: 0;
     overflow: hidden;
-    position: relative;
-    text-align: left;
-    font-size: 0.8em;
-    list-style-type: '- ';
-    background-color: #ffffff;
+    background-color: #f1f1f1;
+    font-family: Arial;
 }
 
-/* Le ul (menu déroulant) des sous onglets quand on a la souris sur un onglet*/
-.navbar li:hover ul 
-{
+.navbar a {
+    float: left;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #ddd;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
-    overflow: visible;
-    background-color: #ffffff;
-    height: auto;
-    width: 100%;
-    margin-top: 9px;
-    border: black 1px solid;
+    text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 #banniere_image
@@ -305,7 +313,7 @@ footer a, header a
     color: black;
 }
 
-footer a:hover, header a:hover
+footer a:hover
 {
     
     color: rgb(3, 0, 201);
