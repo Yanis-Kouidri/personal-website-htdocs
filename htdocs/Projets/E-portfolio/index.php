@@ -18,17 +18,17 @@
     <?php include 'include/banniere_image.php'; ?>
 
     <div id="welcome">
-            <h1> My E-Portfolio </h1> 
-            <span class="sous_titre">Welcome to my e-portfolio website</span> 
-            <p class="block" id="description"> The purpose of this site is to gather all the projects that I have realized during my school career. 
+        <h1> My E-Portfolio </h1> 
+        <span class="sous_titre">Welcome to my e-portfolio website</span> 
+        <p class="block" id="description"> The purpose of this site is to gather all the projects that I have realized during my school career. 
 	    Moreover, this site allows me to present myself from a professional point of view. 
 	    It will of course evolve according to my choices of orientation and the new projects that I will realize.</p>
-	    <p><img src="./medias/images/Logo/inp-n7.png" alt="Logo de l'ENSEEIHT" style="max-height: 100px"> </p>
+	    <p> <img src="./medias/images/Logo/inp-n7.png" alt="Logo de l'ENSEEIHT" style="max-height: 100px" > </p>
     </div>
 
 
     <div id="about_me" class="section">        
-            <p> <img src="./medias/images/yanis_kouidri.jpg" alt="Une photo de Yanis Kouidri"> </p>
+            <p> <img src="./medias/images/yanis_kouidri.jpg" alt="Une photo de Yanis Kouidri" class="float_right"> </p>
             <h2> About me</h2>
             <p class="block">
                 Currently in my first year at the French engineering school ENSEEIHT in the field of Digital Sciences (Sciences du Numérique) program, alternating with Thales Alenia Space Toulouse. 
@@ -59,9 +59,14 @@
 
     <div id="video_cv" class="section">       
         <h2> My video CV </h2>
-        <p class="block"> In this short video, I will start by introducing myself and what I am currently doing at ENSEEIHT and Thales Alenia Space. I will then briefly go back over my past and talk about my career goals. All this while mentioning 3 profiles from the Millionroads website that I found interesting. </p>
+        <p class="block"> 
+            In this short video, I will start by introducing myself and what I am currently doing at ENSEEIHT and Thales Alenia Space. 
+            I will then briefly go back over my past and talk about my career goals. 
+            All this while mentioning 3 profiles from the Millionroads website that I found interesting. 
+        </p>
+
         <iframe width="560" height="315" src="https://www.youtube.com/embed/xI1GUGA5p2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <!-- <video src="./medias/videos/video_pitch_yanis.mp4" controls> If you see this message, it's because your browser is enable to load the video. In this case use the back up link below. </video> -->
+        
         <p> Backup link : <a href="https://youtu.be/xI1GUGA5p2g" target="_blank"> Upload on YouTube </a></p>        
     </div>
 

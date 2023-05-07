@@ -167,6 +167,7 @@ p
 {
     width: 60%;
 }
+
 .block
 {
     
@@ -174,6 +175,19 @@ p
     padding-top: 20px;
     text-align: justify;
     line-height: 200%;
+    
+}
+
+.clear
+{
+    clear: both;
+    
+}
+
+
+.clear_right
+{
+    clear: right;
     
 }
 
@@ -227,15 +241,30 @@ h3
     margin-bottom: 20px;
 }
 
+h4
+{
+    font-size: 1.7em;
+    /* border: solid black 1px; */
+    margin-bottom: 20px;
+}
+
 #about_me p 
 {
     width: 100%;
 }
 
-#about_me img
+.float_right
 {
     float: right;
     padding-left: 25px;
+    max-height: 600px;
+}
+
+.float_left
+{
+    float: left;
+    padding-right: 25px;
+    max-height: 600px;
 }
 
 #video_cv iframe
