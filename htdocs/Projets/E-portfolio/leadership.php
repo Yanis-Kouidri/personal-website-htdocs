@@ -27,17 +27,52 @@
         <h3> Manager vs Leader </h3>
 
         <p class="block">
-            Nowadays, it’s important to be a leader. A lot of work needs leadership skills. Firstly, I will give you my definition of leadership. For me, leadership is the ability of a person to inspire, motivate and guide a group toward a common goal. That involves a lot of different skills such as communication, problem-solving, decision-making, strategic thinking, trust building, and the ability to motivate a group. That also requires to well know the subject and the objective. Leadership is a cross-disciplinary skill whereas a manager is just a position in a company. A manager can do his work without being a leader. Of course, a manager will be better if he has leadership skills. I heard a story where some managers didn’t know what a terminal is in IT companies.
+            Nowadays, it’s important to be a leader. A lot of work needs leadership skills. 
+            Firstly, I will give you my definition of leadership. 
+            For me, leadership is the ability of a person to inspire, motivate and guide a group toward a common goal. 
+            That involves a lot of different skills such as communication, problem-solving, decision-making, strategic thinking, trust building, and the ability to motivate a group. 
+            That also requires to well know the subject and the objective. 
+            Leadership is a cross-disciplinary skill whereas a manager is just a position in a company. 
+            A manager can do his work without being a leader. 
+            Of course, a manager will be better if he has leadership skills. 
+            I heard a story where some managers didn’t know what a terminal is in IT companies.
             <img src="./medias/images/Leadership/manager_vs_leader.jpg" alt="A manager Vs a Leader" class="ilustration">
         </p>
 
         <h3> Interview </h3>
         <p class="block">
-            To know more about the leader, I contact Mohamed Touré, a test leader at Bouygues Telecom. 
-            He explains to me his job and more specifically the leadership part of it. 
-            I found it interesting that he doesn’t want to be a manager but only a leader. 
-            So, he doesn’t deal with managing tasks like administration, budget planning, allocation of resources, etc. but focuses on leading tasks.
+        To know more about the leader, I contact Mohamed Touré, a test leader at Bouygues Telecom. 
+        He explains to me his job, specifically the leadership part. 
+        Interestingly, he doesn’t want to be a manager but only a leader. 
+        So, he doesn’t deal with managing tasks like administration, budget planning, allocation of resources, etc. but focuses on leading tasks.
+        </p>
+
+        <p class="block">
+            I can see myself in his job because like Mohamed I don't want to spend time doing administrative work, giving orders, being accountable or even imposing my authority. 
+            I prefer to lead a project, find solutions, and resolve conflicts so that my team is satisfied with the project it is working on and happy to carry it out. 
+            On the one hand, this treatment is much more humane, and on the other hand, I am convinced that people who are happy to work on a project work better knowing that at any moment they have their say.
+        </p>
+
+        <p>
             <img src="./medias/images/Leadership/myjobglasses_certificate_leadership.png" alt="My certificate from MyJobsGlasses" class="ilustration">
+        </p>
+
+        <h3> Danger </h3>
+
+        <p class="block">
+            Management is an important aspect of companies. Bad management can have heavy repercussions. 
+            I am thinking of the <a href="https://fr.wikipedia.org/wiki/Affaire_France_T%C3%A9l%C3%A9com" target="_blank" >"France Telecom" affair</a>, 
+            between 2006 and 2011 the French telecommunications company "France Telecom" introduced management by fear that pushed 35 employees to suicide in addition to being the cause of many mental disorders for employees (depression, anxiety, etc.). 
+            It is therefore essential that managers be trained to adopt good team management.
+        </p>
+
+        <h3> Myself </h3>
+
+        <p class="block">
+            I like to be a leader and I would like to be one in a company. Being a leader is for me something really <strong>rewarding</strong> that brings a lot of different skills as I mentioned previously. 
+            Moreover, I have the feeling to be the captain of a boat that I must take somewhere. We are all in the same boat, if it seeks, we all seek. 
+            The feeling of accomplishment once the project is completed is immense and makes you want to start another project considering the results of the previous one.
+
         </p>
 
 
@@ -48,7 +83,11 @@
         <h3> Benefit </h3>
 
         <p class="block">
-            Now we have a clear point of view on what leadership is, we can go deeper into this theme and talk about diversity. When all your colleagues are salespersons, their pieces of advice are TV adverts. This sentence means you can’t expect similar people to have different ideas. This is also true in nature, individuals with similar genetics are more vulnerable to epidemics. This picture summarizes all.
+            Now we have a clear point of view on what leadership is, we can go deeper into this theme and talk about diversity. 
+            When all your colleagues are salespersons, their pieces of advice are TV adverts. 
+            This sentence means you can’t expect similar people to have different ideas. 
+            This is also true in nature, individuals with similar genetics are more vulnerable to epidemics. 
+            This picture summarizes all.
             <img src="./medias/images/Leadership/no_diversity_meeting.png" alt="5 similar men at a meeting" class="ilustration">
         </p>
 
@@ -64,7 +103,8 @@
 
         <h4> Biases </h4>
         <p class="block">
-            Firstly, we can see that humans have a lot of bias. Bias refers to a preference, inclination, or prejudice towards or against a particular person, group, thing, or idea. 
+            Firstly, we can see that humans have a lot of bias. 
+            Bias refers to a preference, inclination, or prejudice towards or against a particular person, group, thing, or idea. 
             It is a tendency to favor or disfavor one option over another, often without rational justification. 
             Bias can be conscious or unconscious and can manifest in various ways, such as in attitudes, beliefs, stereotypes, behaviors, and decision-making. 
             It can be influenced by a range of factors, including personal experiences, cultural background, social norms, and cognitive processes. 
@@ -115,7 +155,8 @@
         <h3 class="clear_right"> La Haine </h3>
         <p class="block">
             The second is called "La Haine", it follows the daily life of 3 young people in a French city, a Jew, a black, and an Arab following a riot that left a serious injury. 
-            It contrasts the views of the police and the inhabitants of the neighborhood. This film was inspired by real events and brought to the forefront the daily life of these suburbs.
+            It contrasts the views of the police and the inhabitants of the neighborhood. 
+            This film was inspired by real events and brought to the forefront the daily life of these suburbs.
         </p>
 
 
