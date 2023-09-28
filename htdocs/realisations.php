@@ -35,14 +35,6 @@
             ?> 
         </nav>
 
-        <h2> Fiches </h2>
-        <div>
-        Fiches que j'ai pu écrire afin de garder un trace écrite propre et condencée de mes cours.
-        </div>
-        <nav>
-            <?php afficheType("./Ressources/Fiches/", array(".pdf"));	//j'affiche tous les .pdf du dossier Ressources
-            ?> 
-        </nav>
 
         <h2> Projets </h2>
         <div>
