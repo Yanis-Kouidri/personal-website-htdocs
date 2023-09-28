@@ -31,7 +31,7 @@
             <p> <img src="./medias/images/yanis_kouidri.jpg" alt="Une photo de Yanis Kouidri"> </p>
             <h2> About me</h2>
             <p class="block">
-                Currently in my first year at the French engineering school ENSEEIHT in the field of Digital Sciences (Sciences du Numérique) program, alternating with Thales Alenia Space Toulouse. 
+                Currently in my second year at the French engineering school ENSEEIHT in the field of Digital Sciences (Sciences du Numérique) program, alternating with Thales Alenia Space Toulouse. 
                 I see the position of apprentice engineer as a job that combines knowledge, know-how and interpersonal skills. 
                 In my opinion, it is important to plan a project well in order to understand the ins and outs in order to be able to carry out the technical tasks efficiently. 
                 The field of competence of an engineer in Digital Sciences is quite large, going from computer science to telecommunications and network. 
