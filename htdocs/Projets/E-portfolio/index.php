@@ -56,15 +56,6 @@
 
     </div>
 
-
-    <div id="video_cv" class="section">       
-        <h2> My video CV </h2>
-        <p class="block"> In this short video, I will start by introducing myself and what I am currently doing at ENSEEIHT and Thales Alenia Space. I will then briefly go back over my past and talk about my career goals. All this while mentioning 3 profiles from the Millionroads website that I found interesting. </p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/xI1GUGA5p2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <!-- <video src="./medias/videos/video_pitch_yanis.mp4" controls> If you see this message, it's because your browser is enable to load the video. In this case use the back up link below. </video> -->
-        <p> Backup link : <a href="https://youtu.be/xI1GUGA5p2g" target="_blank"> Upload on YouTube </a></p>        
-    </div>
-
     <?php include 'include/footer.php'; ?>
 </body>
 </html>
