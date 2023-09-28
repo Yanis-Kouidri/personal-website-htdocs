@@ -27,7 +27,7 @@
     <section>
         <h2>À propos de moi</h2>
         <div>
-		    Actuellement en première année à l'ENSEEIHT (N7) dans la filière Sciences du Numérique (SN) en alternance à Thales Alenia Space Toulouse, 
+		    Actuellement en deuxième année d'école d'ingénieur à l'ENSEEIHT (N7) dans la filière Sciences du Numérique (SN) et en alternance à Thales Alenia Space Toulouse, 
 		    je suis apprenti ingénieur.
         </div>
         <br>
