@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yanis Kouidri - Bienvenue</title>
+    <title>Yanis Kouidri - A propos</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <?php include("includes/header.html") ?>
 
     <section id="accueil">
-        <h1>Yanis Kouidri</h1>
-        <p>Bienvenue sur ma page web</p>
+        <h1>Bienvenue sur ma page web</h1>
+        <p>C'est la page à propos.</p>
     </section>
 
-    <section id="presentation">
-        <h2>Présentation</h2>
-        <p>Je suis Yanis Kouidri et je suis apprenti ingénieur à l'ENSEEIHT.</p>
-    </section>
 
     <?php include("includes/footer.html") ?>
 </body>
