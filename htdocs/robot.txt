@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.monsite.com/sitemap.xml
+Sitemap: https://www.kouidri.fr/sitemap.xml
