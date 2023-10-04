@@ -30,8 +30,8 @@
             The goal of this test is not to have the best possible score but to evaluate our own knowledge and therefore to have a critical analysis of ourselves. 
             This test also allows us to learn. Indeed, after each question, the answer appears with an explanatory paragraph as well as links if you wish to go further.<br>
             Here are my results :
-            <img src="./medias/images/Sulitest/sulitest1.png" alt="Part 1 of my sulitest's result" class="ilustration">
-            <img src="./medias/images/Sulitest/sulitest2.png" alt="Part 2 of my sulitest's result" class="ilustration">
+            <img src="./medias/images/Sulitest/sulitest1.png" alt="Part 1 of my sulitest's result" class="illustration">
+            <img src="./medias/images/Sulitest/sulitest2.png" alt="Part 2 of my sulitest's result" class="illustration">
         </p>
         <p class="block">
             One can immediately see that my results (in green) are not evenly distributed on the diagram. 
@@ -73,7 +73,7 @@
             There are, at certain times, load peaks (e.g. during the holidays for e-commerce sites) that the servers must be able to absorb. 
             Companies are therefore obliged to calibrate their number of servers according to these peaks, even though most of the time the site traffic is well below these peaks. 
             As a result, the servers are only used to their full potential 1% of the time (during peaks) and the rest of the time they are almost empty.
-            <img src="./medias/images/Sustainability/server.jpg" alt="Picture of server" class="ilustration">
+            <img src="./medias/images/Sustainability/server.jpg" alt="Picture of server" class="illustration">
             
         </p>
 
@@ -113,7 +113,7 @@
             were very polluting because they were directly rejected in the sewers. 
             With only a few simple household products such as Marseille soap, black soap, citric acid and baking soda, 
             it is possible to do almost all the household tasks in a completely ecological way.
-            <img src="./medias/images/Sustainability/soap.jpg" alt="Some Marseille soap" class="ilustration">
+            <img src="./medias/images/Sustainability/soap.jpg" alt="Some Marseille soap" class="illustration">
         </p>
 
         <p class="block">

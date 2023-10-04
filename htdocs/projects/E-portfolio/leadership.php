@@ -36,7 +36,7 @@
             A manager can do his work without being a leader. 
             Of course, a manager will be better if he has leadership skills. 
             I heard a story where some managers didn’t know what a terminal is in IT companies.
-            <img src="./medias/images/Leadership/manager_vs_leader.jpg" alt="A manager Vs a Leader" class="ilustration">
+            <img src="./medias/images/Leadership/manager_vs_leader.jpg" alt="A manager Vs a Leader" class="illustration">
         </p>
 
         <h3> Interview </h3>
@@ -54,7 +54,7 @@
         </p>
 
         <p>
-            <img src="./medias/images/Leadership/myjobglasses_certificate_leadership.png" alt="My certificate from MyJobsGlasses" class="ilustration">
+            <img src="./medias/images/Leadership/myjobglasses_certificate_leadership.png" alt="My certificate from MyJobsGlasses" class="illustration">
         </p>
 
         <h3> Danger </h3>
@@ -88,7 +88,7 @@
             This sentence means you can’t expect similar people to have different ideas. 
             This is also true in nature, individuals with similar genetics are more vulnerable to epidemics. 
             This picture summarizes all.
-            <img src="./medias/images/Leadership/no_diversity_meeting.png" alt="5 similar men at a meeting" class="ilustration">
+            <img src="./medias/images/Leadership/no_diversity_meeting.png" alt="5 similar men at a meeting" class="illustration">
         </p>
 
         <h3> Fresco of diversity </h3>
@@ -97,7 +97,7 @@
             To understand why, I did, with some classmates, a fresco of diversity. 
             That consist of a set of cards that we had to place on a board and create a circuit through different groups of cards that we decide to associate. 
             Here’s ore board.
-            <img src="./medias/images/Leadership/fresco.jpg" alt="Our board of fresco of diversity" class="ilustration">
+            <img src="./medias/images/Leadership/fresco.jpg" alt="Our board of fresco of diversity" class="illustration">
 
         </p>
 

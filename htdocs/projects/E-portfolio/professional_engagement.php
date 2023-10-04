@@ -58,7 +58,7 @@
             Personally, I have, for the moment, used this site to discuss with 2 people working in very different environments. 
             It was very interesting and I intend to continue to use it as soon as I have some time.
         </p>
-        <img src="./medias/images/preofessional_engagement/myjobglasses_orientation_certificate.png" alt="My certificate given by MyJobsGlasses" id="certificat">
+        <img src="./medias/images/preofessional_engagement/myjobglasses_orientation_certificate.png" alt="My certificate given by MyJobsGlasses" id="certificate">
     </div>
 
     <?php include 'include/footer.php'; ?>
