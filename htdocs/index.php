@@ -16,7 +16,9 @@
 
     <section id="presentation">
         <h2>Présentation</h2>
-        <p>Je suis Yanis Kouidri et je suis apprenti ingénieur à l'ENSEEIHT.</p>
+        <p>Je suis Yanis Kouidri, actuellement en deuxième année à l'ENSEEIHT, une grande école d'ingénieur basée à Toulouse,
+             où je me spécialise dans les Sciences du Numérique. Mon parcours académique est axé sur l'alternance, 
+             ce qui signifie que je partage mon temps entre les cours à l'école et une expérience professionnelle en entreprise.</p>
     </section>
 
     <?php include("includes/footer.html") ?>

@@ -10,8 +10,12 @@
     <?php include("includes/header.html") ?>
 
     <section id="accueil">
-        <h1>Bienvenue sur ma page web</h1>
-        <p>C'est la page à propos.</p>
+        <h1>&Agrave; propos</h1>
+        <p>Cette page est dédiée à ma présentation.</p>
+    </section>
+
+    <section>
+        <h1>En construction</h1>
     </section>
 
 
