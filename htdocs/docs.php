@@ -16,17 +16,23 @@
 
     <div>
         <ul id="docs-list">
-            <?php
-            // Chemin du dossier contenant les fichiers PDF
+        <?php
+            // Chemin du dossier contenant les fichiers PDF et HTML
             $dossier = 'resources/docs/';
 
             // Utilisation de scandir() pour obtenir la liste des fichiers dans le dossier
             $fichiers = scandir($dossier);
 
+            // Extensions autorisées
+            $extensionsAutorisees = array('pdf', 'html');
+
             // Parcourir la liste des fichiers
             foreach ($fichiers as $fichier) {
-                // Vérifier si le fichier a l'extension PDF
-                if (pathinfo($fichier, PATHINFO_EXTENSION) === 'pdf') {
+                // Obtenir l'extension du fichier en lettres minuscules
+                $extension = strtolower(pathinfo($fichier, PATHINFO_EXTENSION));
+
+                // Vérifier si l'extension fait partie des extensions autorisées
+                if (in_array($extension, $extensionsAutorisees)) {
 
                     // Obtenir le nom du fichier sans l'extension
                     $nomFichierSansExtension = pathinfo($fichier, PATHINFO_FILENAME);
@@ -34,11 +40,12 @@
                     // Remplacer les underscores par des espaces
                     $nomFichierAffiche = str_replace('_', ' ', $nomFichierSansExtension);
 
-                    // Afficher le lien vers le fichier PDF
+                    // Afficher le lien vers le fichier PDF ou HTML
                     echo "<li><a href='$dossier$fichier'>$nomFichierAffiche</a></li>\n";
                 }
             }
-            ?>
+        ?>
+
         </ul>
     </div>
 
