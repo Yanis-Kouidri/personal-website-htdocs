@@ -15,7 +15,7 @@
     </section>
 
     <div>
-        <ul class="classic-list">
+        <ul id="docs-list">
             <?php
             // Chemin du dossier contenant les fichiers PDF
             $dossier = 'resources/docs/';
@@ -35,7 +35,7 @@
                     $nomFichierAffiche = str_replace('_', ' ', $nomFichierSansExtension);
 
                     // Afficher le lien vers le fichier PDF
-                    echo "<li><a href='$dossier$fichier'>$nomFichierAffiche</a></li>";
+                    echo "<li><a href='$dossier$fichier'>$nomFichierAffiche</a></li>\n";
                 }
             }
             ?>
