@@ -31,9 +31,9 @@
                 </a> : Site web de partage d'avis sur tout type de produits. Dans le cadre du module M1106 du DUT R&amp;T. Le but était d'écrire un site web uniquement en HTML 5 et CSS 3</div>
             </li>
             <li class="projet"><div> 
-                <a target="_blank" href="projects/M1106-JS/">
+                <a target="_blank" href="projects/intro_js/">
                     <span>Introduction à JavaScript</span>  
-                </a> : Série de petits exercices en JavaScript en utilisant la bibliothèque de <a target="_blank" href="https://jquery.com/">Jquery</a> . Réalisé dans le cadre du module M1106 du DUT R&amp;T.</div>
+                </a> : Série de petits exercices en JavaScript en utilisant la bibliothèque de <a target="_blank" href="https://jquery.com/">Jquery</a> . Réalisé dans le cadre du module d'introduction au JavaScript du DUT R&amp;T.</div>
             </li>
             <li class="projet"><div> 
                 <a target="_blank" href="https://github.com/Yanis-Kouidri/Projet-Python">
