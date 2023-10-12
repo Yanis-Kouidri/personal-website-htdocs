@@ -18,7 +18,7 @@
             <li class="projet"><div> 
                 <a target="_blank" href="projects/Trombinouc/main.php">
                     <span>Trombinouc</span>  
-                </a> : Petit Facebook réalisé avec Maxime JUST lors sur module M2105 du DUT R&amp;T. Le but était de mettre en pratique nos compétences en PHP. </div>
+                </a> : Petit Facebook réalisé avec Maxime JUST lors sur module de web dynamique du DUT R&amp;T. Le but était de mettre en pratique nos compétences en PHP en se basant sur nos acquis en HTML/CSS. </div>
             </li>
             <li class="projet"><div> 
                 <a target="_blank" href="projects/M2105/index.php">
@@ -28,7 +28,7 @@
             <li class="projet"><div> 
                 <a target="_blank" href="projects/M1106-ProjetWeb/Page_principale/page_principale.html">
                     <span>Quoi acheter</span>  
-                </a> : Site web de partage d'avis sur tout type de produits. Dans le cadre du module M1106 du DUT R&amp;T. Le but était d'écrire un site web uniquement en HTML 5 et CSS 3</div>
+                </a> : Site web de partage d'avis sur tout type de produits. Dans le cadre du module d'introduciton au développement web du DUT R&amp;T. Le but était d'écrire un site web uniquement en HTML 5 et CSS 3. C'est mon tout premier site web !</div>
             </li>
             <li class="projet"><div> 
                 <a target="_blank" href="projects/intro_js/">
