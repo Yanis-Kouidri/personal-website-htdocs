@@ -1,5 +1,5 @@
 <?php
-    $db_servername = "db"; // Nom du service MySQL dans votre Docker Compose
+    $db_servername = getenv('DB_SERVICE_NAME'); // Nom du service MySQL dans votre Docker Compose
     $db_username = getenv('DB_USERNAME'); // Utilisateur MySQL
     $db_password = getenv('DB_PASSWORD'); // Mot de passe défini lors de la création du conteneur MySQL
     $db_name = "trombinouc"; // Remplacez par le nom de votre base de données
