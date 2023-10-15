@@ -19,7 +19,9 @@
 			<h1> Trombinouc </h1>
 
 			<?php
-				if ($_SESSION["logged"] == TRUE) {
+				//debug($_SESSION);
+
+				if ($_SESSION && $_SESSION["logged"]) {
 					echo "<p><a href='profil.php?usr=me'>Votre profil</a></p>
 					<p>
 				<a href='search.php'> Rechercher </a>
@@ -44,24 +46,27 @@
 		</header>
 	<h2> Les posts </h2>	
 <?php
-	if ($_GET['msg'] == "no_admin_friend" ) {
-		echo "<h3> Vous devez être administrateur ou ami avec un administrateur pour pouvoir poster sur Trombinouc </h3>";
+	if ($_GET) {
+		if ($_GET['msg'] == "no_admin_friend" ) {
+			echo "<h3> Vous devez être administrateur ou ami avec un administrateur pour pouvoir poster sur Trombinouc </h3>";
+		}
+		if ($_GET['msg'] == "no_admin_friend2" ) {
+			echo "<h3> Vous devez être administrateur ou ami avec un administrateur pour pouvoir commenter sur Trombinouc </h3>";
+		}
+		if ($_GET['msg'] == "newpost" ) {
+			echo "<h3> Vous venez de poster sur Trombinouc </h3>";
+		}
+		if ($_GET['msg'] == "newcomm" ) {
+			echo "<h3> Vous venez de commenter sur Trombinouc </h3>";
+		}
 	}
-	if ($_GET['msg'] == "no_admin_friend2" ) {
-		echo "<h3> Vous devez être administrateur ou ami avec un administrateur pour pouvoir commenter sur Trombinouc </h3>";
-	}
-	if ($_GET['msg'] == "newpost" ) {
-		echo "<h3> Vous venez de poster sur Trombinouc </h3>";
-	}
-	if ($_GET['msg'] == "newcomm" ) {
-		echo "<h3> Vous venez de commenter sur Trombinouc </h3>";
-	}
+
 
 
 //Là, je fais une requête pour avoir tous les posts
 	$sql = "SELECT * FROM POSTS";
 	$sql = $sql." ORDER BY id DESC ";
-	$req = $bd -> prepare($sql);
+	$req = $conn -> prepare($sql);
 	$req -> execute();
 	$lesposts  = $req -> fetchall();
 	$req -> closeCursor();
@@ -75,8 +80,8 @@
 
 			// ici je fais une requête pour obtenir le nom et prénom de celui qui a fait le post
 		// en vrai on aurait pu les mettre dans la table post directement mais bon, comme ça on évite la redondance non ?
-		$sql = "SELECT name, last_name FROM USERS WHERE username = '".$apost['user'] ."' ";
-		$req = $bd -> prepare($sql);
+		$sql = "SELECT first_name, last_name FROM USERS WHERE username = '".$apost['user'] ."' ";
+		$req = $conn -> prepare($sql);
 		$req -> execute();
 		$nomprenom  = $req -> fetchall();
 		$req -> closeCursor();
@@ -98,8 +103,6 @@
 
 		echo "</section>";
 	}
-
-
 
 ?>
 		
