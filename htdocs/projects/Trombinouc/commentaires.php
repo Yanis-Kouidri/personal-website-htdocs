@@ -16,7 +16,7 @@
 	$sql = $sql.'INNER JOIN FRIENDS ON username = user1 OR username = user2 '; 
 	$sql = $sql.'WHERE admin = 1 AND pending = 0 AND (user1 = \'' .$_SESSION["username"]. '\' OR user2 = \''.$_SESSION["username"].'\')';
 #	echo $sql;
-	$req = $bd->prepare($sql);
+	$req = $dbConnection->prepare($sql);
 	$req -> execute();
 	$enreg = $req -> fetchall();
 	$req -> closeCursor();
@@ -25,14 +25,14 @@
 	$sql = 'SELECT admin FROM USERS ';
 	$sql = $sql.'WHERE username = \''.$_SESSION["username"].'\'';
 #	echo $sql;
-	$req = $bd->prepare($sql);
+	$req = $dbConnection->prepare($sql);
 	$req -> execute();
 	$admin = $req -> fetchall();
 	$req -> closeCursor();
 
 #	debug($admin);
 
-	if ($enreg[0] == null && $admin[0]["admin"] == 0){
+	if ($enreg == null && $admin[0]["admin"] == 0){
 		header('Location:./main.php?msg=no_admin_friend2');
 		exit();
 	} 
@@ -57,7 +57,7 @@
 
 	$sql = "SELECT * FROM POSTS";
 	$sql = $sql." WHERE id = '{$idparent}' ";
-	$req = $bd -> prepare($sql);
+	$req = $dbConnection -> prepare($sql);
 	$req -> execute();
 	$lepost  = $req -> fetchall();		//récupère le post parent
 	$req -> closeCursor();
@@ -69,14 +69,14 @@
 		// ici je fais une requête pour obtenir le nom et prénom de celui qui a fait le post
 		// en vrai on aurait pu les mettre dans la table post directement mais bon, comme ça on évite la redondance non ?
 		$sql = "SELECT name, last_name FROM USERS WHERE username = '".$lepost[0]['user'] ."' ";
-		$req = $bd -> prepare($sql);
+		$req = $dbConnection -> prepare($sql);
 		$req -> execute();
 		$nomprenom  = $req -> fetchall();
 		$req -> closeCursor();
 		
 		
 		echo "<p>";
-				echo $nomprenom[0][0]." ".$nomprenom[0][1]. " a écrit le " .$apost['date']. " à ". $apost['time'] ;
+				echo $nomprenom[0][0]." ".$nomprenom[0][1]. " a écrit le " .$lepost[0]['date']. " à ". $lepost[0]['time'] ;
 		echo "</p>";
 
 		
@@ -102,7 +102,7 @@
 	$sql = $sql." WHERE parent = '".$idparent ."'";
 	$sql = $sql." ORDER BY id DESC ";
 	// echo $sql;
-	$req = $bd -> prepare($sql);
+	$req = $dbConnection -> prepare($sql);
 	$req -> execute();
 	$lescomms  = $req -> fetchall();
 	$req -> closeCursor();
@@ -114,7 +114,7 @@
 			// ici je fais une requête pour obtenir le nom et prénom de celui qui a fait le commentaire
 		// en vrai on aurait pu les mettre dans la table post directement mais bon, comme ça on évite la redondance non ?
 		$sql = "SELECT name, last_name FROM USERS WHERE username = '".$acomm['user'] ."' ";
-		$req = $bd -> prepare($sql);
+		$req = $dbConnection -> prepare($sql);
 		$req -> execute();
 		$nomprenom  = $req -> fetchall();
 		$req -> closeCursor();

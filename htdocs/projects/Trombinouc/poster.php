@@ -12,7 +12,7 @@
 	$sql = $sql.'INNER JOIN FRIENDS ON username = user1 OR username = user2 '; 
 	$sql = $sql.'WHERE admin = 1 AND pending = 0 AND (user1 = \'' .$_SESSION["username"]. '\' OR user2 = \''.$_SESSION["username"].'\')';
 #	echo $sql;
-	$req = $bd->prepare($sql);
+	$req = $dbConnection->prepare($sql);
 	$req -> execute();
 	$enreg = $req -> fetchall();
 	$req -> closeCursor();
@@ -21,14 +21,14 @@
 	$sql = 'SELECT admin FROM USERS ';
 	$sql = $sql.'WHERE username = \''.$_SESSION["username"].'\'';
 #	echo $sql;
-	$req = $bd->prepare($sql);
+	$req = $dbConnection->prepare($sql);
 	$req -> execute();
 	$admin = $req -> fetchall();
 	$req -> closeCursor();
 
 #	debug($admin);
 
-	if ($enreg[0] == null && $admin[0]["admin"] == 0){
+	if ($enreg == null && $admin[0]["admin"] == 0){
 		header('Location:./main.php?msg=no_admin_friend');
 		exit();
 	} 

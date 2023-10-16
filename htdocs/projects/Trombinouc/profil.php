@@ -33,7 +33,7 @@
 
                 $sql = "SELECT * FROM USERS WHERE username = :pseudo";
 
-                $req = $bd->prepare($sql);
+                $req = $dbConnection->prepare($sql);
 
                 $req -> execute($val);
 
@@ -54,7 +54,7 @@
 
                 $sql = "SELECT * FROM FRIENDS INNER JOIN USERS ON USERS.username = FRIENDS.user2 WHERE FRIENDS.user1 = :pseudo AND FRIENDS.pending = 0";
 
-                $req = $bd->prepare($sql);
+                $req = $dbConnection->prepare($sql);
 
                 $req -> execute($val);
 
@@ -68,7 +68,7 @@
 
                 $sql = "SELECT * FROM FRIENDS INNER JOIN USERS ON USERS.username = FRIENDS.user1 WHERE FRIENDS.user2 = :pseudo AND FRIENDS.pending = 0";
 
-                $req = $bd->prepare($sql);
+                $req = $dbConnection->prepare($sql);
 
                 $req -> execute($val);
 
@@ -84,7 +84,7 @@
 
                 $sql = "SELECT * FROM FRIENDS INNER JOIN USERS ON USERS.username = FRIENDS.user2 WHERE FRIENDS.user1 = :pseudo AND FRIENDS.pending = 1";
 
-                $req = $bd->prepare($sql);
+                $req = $dbConnection->prepare($sql);
 
                 $req -> execute($val);
 
@@ -98,7 +98,7 @@
 
                 $sql = "SELECT * FROM FRIENDS INNER JOIN USERS ON USERS.username = FRIENDS.user1 WHERE FRIENDS.user2 = :pseudo AND FRIENDS.pending = 1";
 
-                $req = $bd->prepare($sql);
+                $req = $dbConnection->prepare($sql);
 
                 $req -> execute($val);
 
@@ -122,7 +122,7 @@
 
                 $sql = "SELECT * FROM USERS WHERE username = :pseudo";
 
-                $req = $bd->prepare($sql);
+                $req = $dbConnection->prepare($sql);
 
                 $req -> execute($val);
 
@@ -142,7 +142,7 @@
 
                 $sql = "SELECT * FROM FRIENDS INNER JOIN USERS ON USERS.username = FRIENDS.user2 WHERE FRIENDS.user1 = :pseudo AND FRIENDS.pending = 0";
 
-                $req = $bd->prepare($sql);
+                $req = $dbConnection->prepare($sql);
 
                 $req -> execute($val);
 
@@ -156,7 +156,7 @@
 
                 $sql = "SELECT * FROM FRIENDS INNER JOIN USERS ON USERS.username = FRIENDS.user1 WHERE FRIENDS.user2 = :pseudo AND FRIENDS.pending = 0";
 
-                $req = $bd->prepare($sql);
+                $req = $dbConnection->prepare($sql);
 
                 $req -> execute($val);
 

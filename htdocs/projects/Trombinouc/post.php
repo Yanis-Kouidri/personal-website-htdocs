@@ -10,8 +10,8 @@
 
 	$sql1 = "INSERT INTO POSTS (user, text, date, time) ";
 	$sql1 = $sql1."VALUES (:user, :text, '".date('d-m-Y')."' , '". date('H:i:s'). "' )";
-	echo $sql1;
-	$req1 = $bd-> prepare($sql1);
+#	echo $sql1;
+	$req1 = $dbConnection-> prepare($sql1);
 	$marqueurs = array( "user" => $_SESSION['username'], "text" => htmlspecialchars($_POST['text'])  );
 	$req1 -> execute($marqueurs);
 	$req1 -> closeCursor();

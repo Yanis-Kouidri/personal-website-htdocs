@@ -58,7 +58,7 @@
 
 					$sql = "SELECT name, last_name, username FROM USERS ";
 					$sql = $sql." WHERE name LIKE :prenom OR last_name LIKE :nom ";
-					$req = $bd-> prepare($sql);
+					$req = $dbConnection-> prepare($sql);
 					$marqueurs = array("prenom" => "%{$_POST['recherche']}%", "nom" => "%{$_POST['recherche']}%" ); //les pourcentages permettent de d'élargir la recherche = à * dans linux
 					$req->execute($marqueurs);
 					$friend = $req -> fetchall();
@@ -87,7 +87,7 @@
 
 				else {			//Sinon on affiche tous les utilisateurs
 					$sql = "SELECT name, last_name, username FROM USERS";
-					$req = $bd-> prepare($sql);
+					$req = $dbConnection-> prepare($sql);
 					$req->execute();
 					$friend = $req -> fetchall();
 					$req -> closeCursor();

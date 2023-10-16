@@ -18,13 +18,16 @@
         <form method="POST" action="connecte.php">
 
                 <?php
-                    if ($_GET["msg"] == "wrong") {
-                        echo "<p><strong>Mauvais nom d'utilisateur ou mot de passe.</strong></p>";
+                    if ($_GET) {
+                        if ($_GET["msg"] == "wrong") {
+                            echo "<p><strong>Mauvais nom d'utilisateur ou mot de passe.</strong></p>";
+                        }
+    
+                        if ($_GET["msg"] == "nonco") {
+                            echo "<p><strong> Vous devez être connecté pour acceder à la page précédente </strong></p>"; // Message affiché si l'utilisateur tente de d'acceder à la page ami par exemple, sans être connecté.
+                        }
                     }
 
-                    if ($_GET["msg"] == "nonco") {
-                        echo "<p><strong> Vous devez être connecté pour acceder à la page précédente </strong></p>"; // Message affiché si l'utilisateur tente de d'acceder à la page ami par exemple, sans être connecté.
-                    }
                 ?>
             <p>
                 <label for="login">Nom d'utilisateur</label>

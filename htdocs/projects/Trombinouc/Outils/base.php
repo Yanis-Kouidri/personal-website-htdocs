@@ -6,12 +6,12 @@
 
 
     try {
-        $conn = new PDO("mysql:host=$db_servername;dbname=$db_name", $db_username, $db_password);
+        $dbConnection= new PDO("mysql:host=$db_servername;dbname=$db_name", $db_username, $db_password);
 
         // Configuration pour afficher les erreurs PDO
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        echo "Connexion à la base de données réussie";
+        #echo "Connexion à la base de données réussie";
     } catch (PDOException $e) {
         echo "Erreur de connexion : " . $e->getMessage();
     }

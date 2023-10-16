@@ -18,7 +18,7 @@
 
 <?php 		//Ici je teste si l'utilisateur qui demande et l'utilisateur qui est demandé en ami ne sont pas déjà amis.
 	$sql1 = "SELECT * FROM FRIENDS WHERE user1 = '{$_SESSION['username']}' AND user2='{$_POST['add']}' OR user2 = '{$_SESSION['username']}' AND user1='{$_POST['add']}' ";
-	$req1 = $bd-> prepare($sql1);
+	$req1 = $dbConnection-> prepare($sql1);
 	$req1 -> execute();
 	$dejaami = $req1 -> fetchall();
 	$req1 -> closeCursor();
@@ -39,7 +39,7 @@
 	$val=array("asking" => $_SESSION['username'], "asked" => $_POST['add']);
 
 	$sql = "INSERT INTO FRIENDS (user1, user2) VALUES (:asking,:asked)"; // ici il faut impérativement rentrer dans values des pseudo qui existent déjà dans user.
-	$req = $bd-> prepare($sql);
+	$req = $dbConnection-> prepare($sql);
 	$req->execute($val);
 	$req -> closeCursor();
 	

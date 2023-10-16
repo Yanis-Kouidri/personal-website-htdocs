@@ -11,13 +11,13 @@
 		exit();
 	}
 	$sql="SELECT username FROM USERS WHERE username=:pseudo";
-	$req = $bd -> prepare($sql);
+	$req = $dbConnection -> prepare($sql);
 	$marqueurs = array("pseudo" => htmlspecialchars( $_POST['login'] )  );
 	$req -> execute($marqueurs);
 	$reponse = $req -> fetchall();
 	$req -> closeCursor();
 
-	if ($reponse[0] != null ) { // On vérifie que le nom d'utilisateur saisi dans le formulaire n'existe pas
+	if ($reponse && $reponse[0] != null ) { // On vérifie que le nom d'utilisateur saisi dans le formulaire n'existe pas
 		header('Location:inscription.php?msg=taken');
 		exit();
 	}
@@ -25,7 +25,7 @@
 		$birth = $_POST['jour'].'-'.$_POST['mois'].'-'.$_POST['annee']; //je crée la date de naissance grace aux variables de $_POST
 		$sql="INSERT INTO USERS (username, name, last_name, password, mail, birth, gender) 
 		VALUES (:username, :name, :last_name, :password, :mail, :birth, :gender)";
-		$req2 = $bd -> prepare($sql);
+		$req2 = $dbConnection -> prepare($sql);
 		$marqueurs2 = array("username" => htmlspecialchars ($_POST['login']), "name" => htmlspecialchars( $_POST['prenom']) ,
 			"last_name" => htmlspecialchars($_POST['nom']), "password" => hash("sha256", $_POST['mdp']), "mail" => htmlspecialchars( $_POST['mail'] ) ,
 		       	"birth" => $birth ,"gender" => $_POST['genre']  );

@@ -66,7 +66,7 @@
 //Là, je fais une requête pour avoir tous les posts
 	$sql = "SELECT * FROM POSTS";
 	$sql = $sql." ORDER BY id DESC ";
-	$req = $conn -> prepare($sql);
+	$req = $dbConnection -> prepare($sql);
 	$req -> execute();
 	$lesposts  = $req -> fetchall();
 	$req -> closeCursor();
@@ -80,8 +80,8 @@
 
 			// ici je fais une requête pour obtenir le nom et prénom de celui qui a fait le post
 		// en vrai on aurait pu les mettre dans la table post directement mais bon, comme ça on évite la redondance non ?
-		$sql = "SELECT first_name, last_name FROM USERS WHERE username = '".$apost['user'] ."' ";
-		$req = $conn -> prepare($sql);
+		$sql = "SELECT name, last_name FROM USERS WHERE username = '".$apost['user'] ."' ";
+		$req = $dbConnection -> prepare($sql);
 		$req -> execute();
 		$nomprenom  = $req -> fetchall();
 		$req -> closeCursor();

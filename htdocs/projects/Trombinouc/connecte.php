@@ -3,7 +3,7 @@
     include("./Outils/fonctions.php");
     $sql = "SELECT * FROM USERS WHERE username = :q_username";
         //q_username pour querried username
-    $req = $bd->prepare($sql);
+    $req = $dbConnection->prepare($sql);
 
     $val = array("q_username"=>$_POST["login"]);
         //la requête va utiliser la clé primaire rentrée pour comparer au mot de passe
@@ -12,6 +12,10 @@
     $enreg = $req -> fetchall();
 
     $req -> closeCursor();
+
+    if (!$enreg) {
+        header("Location: connexion.php?msg=wrong");
+    }
 
         //ensuite, on convertit le mot de passe en hash et on fait une simple if égalité
     if ($enreg[0]["password"] == hash("sha256", $_POST["mdp"])) {

@@ -28,7 +28,7 @@
 					<input id="nom" name="nom" type="text" maxlength="30" required />
 				</p>
 <?php
-	if ($_GET['msg'] == 'taken' ){
+	if ($_GET && $_GET['msg'] == 'taken' ){
 		echo "<p> <strong> Le nom d'utilisateur existe déjà, merci d'en choisir un autre. </strong> </p>";
 	}
 ?>
@@ -48,7 +48,7 @@
 
 
 <?php
-	if ($_GET['msg'] == 'mdpdiff' ){
+	if ($_GET && $_GET['msg'] == 'mdpdiff' ){
 		echo "<p> <strong> Les mots de passe doivent être identiques. </strong> </p>";
 	}
 ?>
@@ -90,7 +90,7 @@
 					<select name="annee" id="annee" required>
 						<option value=""> Année </option>
 						<?php
-							for ($i=date(Y) ; $i>=1900 ; $i--) { //date(Y) renvoi l'année courante sur complète, alors que date(y) renvoie juste le 2 dernier chiffres 
+							for ($i=date("Y") ; $i>=1900 ; $i--) { //date(Y) renvoi l'année courante sur complète, alors que date(y) renvoie juste le 2 dernier chiffres 
 								//A priori personne n'est né avant 1900 et encore vivant aujourd'hui
 								echo '<option value="'.$i.'"> '.$i.' </option> ' ;
 							}
