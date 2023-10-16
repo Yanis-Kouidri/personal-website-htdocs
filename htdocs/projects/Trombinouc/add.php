@@ -14,9 +14,7 @@
 
 // faire en sorte de vérifier que l'utilisateur est bien log et récupérer son pseudo
 
-?>
-
-<?php 		//Ici je teste si l'utilisateur qui demande et l'utilisateur qui est demandé en ami ne sont pas déjà amis.
+//Ici je teste si l'utilisateur qui demande et l'utilisateur qui est demandé en ami ne sont pas déjà amis.
 	$sql1 = "SELECT * FROM FRIENDS WHERE user1 = '{$_SESSION['username']}' AND user2='{$_POST['add']}' OR user2 = '{$_SESSION['username']}' AND user1='{$_POST['add']}' ";
 	$req1 = $dbConnection-> prepare($sql1);
 	$req1 -> execute();
@@ -40,7 +38,7 @@
 
 	$sql = "INSERT INTO FRIENDS (user1, user2) VALUES (:asking,:asked)"; // ici il faut impérativement rentrer dans values des pseudo qui existent déjà dans user.
 	$req = $dbConnection-> prepare($sql);
-	$req->execute($val);
+	$req -> execute($val);
 	$req -> closeCursor();
 	
 	header('Location:search.php?msg=amis');

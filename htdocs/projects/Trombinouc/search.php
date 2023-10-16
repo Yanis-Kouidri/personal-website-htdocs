@@ -23,13 +23,16 @@
 	<body>
 		<header>
 			<p> Trombinouc : Recherche </p>
-			<?php 
-				if($_GET['msg'] == "dejaamis" ) {
-					echo "<h2> Vous êtes déjà amis ! </h2>";
+			<?php
+				if ($_GET) {
+					if($_GET['msg'] == "dejaamis" ) {
+						echo "<h2> Vous êtes déjà amis ! </h2>";
+					}
+					if($_GET['msg'] == "amis" ) {
+						echo "<h2> Demande d'ami envoyée ! </h2>";
+					}
 				}
-				if($_GET['msg'] == "amis" ) {
-					echo "<h2> Demande d'ami envoyée ! </h2>";
-				}
+
 			?>
 			<a href="main.php">Home</a>
 		</header>
@@ -54,7 +57,7 @@
 				//print_r($_POST);   //Pour le déboguage
 				//echo "</pre>";
 				
-				if ($_POST['rechercher'] == "search" ) {  		//Si on passe par le formulaire de recherche alors :
+				if ($_POST && $_POST['rechercher'] == "search" ) {  		//Si on passe par le formulaire de recherche alors :
 
 					$sql = "SELECT name, last_name, username FROM USERS ";
 					$sql = $sql." WHERE name LIKE :prenom OR last_name LIKE :nom ";
@@ -91,9 +94,8 @@
 					$req->execute();
 					$friend = $req -> fetchall();
 					$req -> closeCursor();
-					//echo "<pre>";
-					//print_r($friend);   //Pour le déboguage
-					//echo "</pre>";
+					# debug($friend);   //Pour le déboguage
+
 					
 
 					echo "Tous les utilisateurs de Trombinouc";
