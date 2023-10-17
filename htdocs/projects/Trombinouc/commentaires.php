@@ -6,7 +6,7 @@
 	$idparent = $_POST['comm'];		//$_POST['comm'] correspond à l'id du post parent, pour plus de clarté et de simplicité, je me met dans une variable "parlante"
 
 	session_start();
-	if ($_SESSION['logged'] != 1 ) {
+	if (!$_SESSION) {
 		header('Location:./connexion.php?msg=nonco');
 		exit();
 	}
