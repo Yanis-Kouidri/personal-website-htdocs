@@ -42,10 +42,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-	    <meta charset="UTF-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style.css">
+		<?php include('./Includes/head.html'); ?>
 	    <title>Commentaires</title>
 	</head>
 	<body>
@@ -111,8 +108,7 @@
 	foreach($lescomms as $acomm ) {
 		echo "<section>";
 
-			// ici je fais une requête pour obtenir le nom et prénom de celui qui a fait le commentaire
-		// en vrai on aurait pu les mettre dans la table post directement mais bon, comme ça on évite la redondance non ?
+		// ici je fais une requête pour obtenir le nom et prénom de celui qui a fait le commentaire
 		$sql = "SELECT name, last_name FROM USERS WHERE username = '".$acomm['user'] ."' ";
 		$req = $dbConnection -> prepare($sql);
 		$req -> execute();
@@ -145,11 +141,6 @@
 					<button id="post" name="parent" type="submit" value=" <?php echo $idparent;  ?> "  > Ajouter un commentaire </button>
 				</p>
 			</form>
-
-
-
-
-
 
 	</body>
 </html>

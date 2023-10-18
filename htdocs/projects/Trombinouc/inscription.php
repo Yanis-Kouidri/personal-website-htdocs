@@ -1,9 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="style.css">
-		<title>M2105</title>
+		<?php include('./Includes/head.html'); ?>
+		<title>Inscription</title>
 	</head>
 	<body>
 		<!-- L'en-tête -->
