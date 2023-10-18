@@ -17,7 +17,7 @@
 	    <title> Galerie photos </title>
 	</head>
 	<body>
-		<nav>	<a href="main.php">Home</a> </nav> 
+	<?php include('./Includes/nav.html'); ?>
 <?php
 	
 	$galerie = listeRep("./Galerie/"); //je récupère tout le contenu du dossier Galerie.

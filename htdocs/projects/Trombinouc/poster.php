@@ -42,7 +42,7 @@
 		<title>Poster</title>
 	</head>
 	<body>
-	<a href="main.php">Home</a>
+	<?php include('./Includes/nav.html'); ?>
 			<p>Vous pouvez poster sur la page principale ici</p>
 			<form method="POST" action="post.php">
 				<p>

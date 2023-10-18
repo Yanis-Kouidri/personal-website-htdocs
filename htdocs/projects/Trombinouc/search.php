@@ -32,7 +32,7 @@
 				}
 
 			?>
-			<a href="main.php">Home</a>
+			<?php include('./Includes/nav.html') ?>
 		</header>
 
 		

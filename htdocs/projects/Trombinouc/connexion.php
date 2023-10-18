@@ -7,6 +7,7 @@
 <body>
     <header>
         <p>Connexion à Trombinouc !</p>
+        <?php include('./Includes/nav.html'); ?>
     </header>
 
     <section>

@@ -8,6 +8,7 @@
 		<!-- L'en-tête -->
 		<header>
 			<p>Bienvenue sur Trombinouc !</p>
+			<?php include('./Includes/nav.html'); ?>
 		</header>
 				
 		<!-- Le contenu (1 seule section suffit) -->		
@@ -15,7 +16,6 @@
 			<h1>Création d'un nouveau compte</h1>
 			<p>Veuillez remplir les champs suivant</p>
 			<form method="POST" action="./inscri.php"> <!-- la méthode d'envoi est POST et c'est envoyé à ./inscri.php -->
-
 
 				<p>	
 					<label for="prenom"> Prénom </label> 	

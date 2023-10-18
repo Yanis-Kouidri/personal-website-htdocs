@@ -16,13 +16,13 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="FR">
+<html lang="fr">
 <head>
     <?php include('./Includes/head.html'); ?>
     <title>Profil</title>
 </head>
 <body>
-<a href="main.php">Home</a>
+<?php include('./Includes/nav.html'); ?>
         <?php
             if ($_GET["usr"] == "me") {
 
@@ -44,7 +44,6 @@
                 if ($enreg[0]["admin"] == 1) {
                     echo "<strong>Vous êtes admin.</strong>";
                 }
-
                 echo "</section>";
 
                 echo "<section><h1>Vos amis :</h1>";
