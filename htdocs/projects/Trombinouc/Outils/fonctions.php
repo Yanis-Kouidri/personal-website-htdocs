@@ -38,24 +38,56 @@ function recupPhotos ($listeDeFichiers) {		//cette fonction permet de lister les
 	
 	}
 
-	
-
 return $lesPhotos;
 }
 
-function recupPdf ($listeDeFichiers) {		//cette fonction permet de lister les pdf à partir d'un tableau de fichier. Elle retourne un tableau de pdf.
-	$lesPdf =array();
-	foreach($listeDeFichiers as $unfic) {
-		$ext = substr ($unfic, -4);
-		if ( $ext == ".jpg" || $ext == ".png" ) {
-			$lesPdf[] = $unfic;
-		}
-	
-	}
 
-	
 
-return $lesPdf;
+function displayUserProfile($username, $dbConnection) {
+    $query = "SELECT * FROM USERS WHERE username = :username";
+    $stmt = $dbConnection->prepare($query);
+    $stmt->bindParam(":username", $username);
+    $stmt->execute();
+    $userProfile = $stmt->fetch();
+
+    if ($userProfile) {
+        echo "<section><h1>Profil de {$userProfile['name']} {$userProfile['last_name']}</h1>";
+
+        echo "<p>Voici le profil de {$userProfile['name']} {$userProfile['last_name']}.</p>";
+        if ($userProfile["admin"] == 1) {
+            echo "<strong>Cette personne est admin.</strong>";
+        }
+
+        echo "</section>";
+
+        echo "<section><h1>Ses amis :</h1>";
+
+        displayUserFriends($username, $dbConnection);
+
+        echo "</section>";
+    }
 }
 
+function displayUserFriends($username, $dbConnection) {
+	$query = "SELECT u.name, u.last_name, u.username
+		FROM FRIENDS f
+		INNER JOIN USERS u ON (u.username = f.user1 OR u.username = f.user2)
+		WHERE (f.user1 = :username OR f.user2 = :username) AND f.pending = 0";
+
+
+    $stmt = $dbConnection->prepare($query);
+    $stmt->bindParam(":username", $username);
+    $stmt->execute();
+    $friends = $stmt->fetchAll();
+
+	//debug($friends);
+
+    if (!empty($friends)) {
+        foreach ($friends as $friend) {
+			if ($friend['username'] !== $username) {
+            	echo "<p><a href='profil.php?usr={$friend['username']}'>{$friend['name']} {$friend['last_name']}</a> est ami avec cet utilisateur.</p>";
+			}
+        }
+    }
+}
 ?>
