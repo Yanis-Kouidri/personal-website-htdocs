@@ -15,6 +15,6 @@
 	$req1 -> execute($marqueurs);
 	$req1 -> closeCursor();
 
-	header('Location:./main.php?msg=newcomm');
+	header('Location:./index.php?msg=newcomm');
 	exit();
 ?>

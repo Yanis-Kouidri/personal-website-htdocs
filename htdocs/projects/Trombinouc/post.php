@@ -16,6 +16,6 @@
 	$req1 -> execute($marqueurs);
 	$req1 -> closeCursor();
 
-	header('Location:./main.php?msg=newpost');
+	header('Location:./index.php?msg=newpost');
 	exit();
 ?>

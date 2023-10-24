@@ -36,7 +36,7 @@
 		$_SESSION["logged"] = TRUE;
 		$_SESSION["name"] = $marqueurs2['name'];
 		$_SESSION["username"] = $marqueurs2["username"];
-		header('Location:main.php?msg=newuser'); //renvoie vers la page principale du site avec une variable dans le lien
+		header('Location:index.php?msg=newuser'); //renvoie vers la page principale du site avec une variable dans le lien
 		exit();
 	}
 

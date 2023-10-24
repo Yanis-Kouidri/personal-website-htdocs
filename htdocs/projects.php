@@ -16,7 +16,7 @@
     <div>
         <ul id=project-list>
             <li class="projet"><div> 
-                <a target="_blank" href="projects/Trombinouc/main.php">
+                <a target="_blank" href="projects/Trombinouc">
                     <span>Trombinouc</span>  
                 </a> : Petit Facebook réalisé avec Maxime JUST lors sur module de web dynamique du DUT R&amp;T. Le but était de mettre en pratique nos compétences en PHP en se basant sur nos acquis en HTML/CSS. </div>
             </li>

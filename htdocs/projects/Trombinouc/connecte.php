@@ -24,7 +24,7 @@
         $_SESSION["name"] = $enreg[0]["name"];
         $_SESSION["username"] = $enreg[0]["username"];
             //variables de session pour le nom, pseudo pour les posts, et log, pour ne pas kick l'utilisateur
-        header("Location: main.php");
+        header("Location: index.php");
         exit();
     } else {
         header("Location: connexion.php?msg=wrong");

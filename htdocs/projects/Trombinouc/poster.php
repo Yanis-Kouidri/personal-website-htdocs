@@ -29,7 +29,7 @@
 #	debug($admin);
 
 	if ($enreg == null && $admin[0]["admin"] == 0){
-		header('Location:./main.php?msg=no_admin_friend');
+		header('Location:./index.php?msg=no_admin_friend');
 		exit();
 	} 
 	

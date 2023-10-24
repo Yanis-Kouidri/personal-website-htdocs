@@ -33,7 +33,7 @@
 #	debug($admin);
 
 	if ($enreg == null && $admin[0]["admin"] == 0){
-		header('Location:./main.php?msg=no_admin_friend2');
+		header('Location:./index.php?msg=no_admin_friend2');
 		exit();
 	} 
 	
@@ -46,7 +46,7 @@
 	    <title>Commentaires</title>
 	</head>
 	<body>
-		<a href="main.php">Home</a> 
+		<?php include('./Includes/nav.html'); ?>
 		<h2> Le post </h2> 
 <?php		//réaffiche le post
 	
