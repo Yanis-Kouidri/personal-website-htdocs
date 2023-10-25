@@ -14,8 +14,8 @@
 		<!-- Le contenu (1 seule section suffit) -->		
 		<section>
 			<h1>Création d'un nouveau compte</h1>
-			<p>Veuillez remplir les champs suivant</p>
-			<form method="POST" action="./inscri.php"> <!-- la méthode d'envoi est POST et c'est envoyé à ./inscri.php -->
+			<p>Veuillez remplir les champs suivant :</p>
+			<form id="sign-up" method="POST" action="./inscri.php"> <!-- la méthode d'envoi est POST et c'est envoyé à ./inscri.php -->
 
 				<p>	
 					<label for="prenom"> Prénom </label> 	
@@ -35,7 +35,7 @@
 
 				<p>	<label for="login">Nom d'utilisateur</label> <!-- doit être unique pour permettre l'autentificaton -->
 					<input id="login" name="login" type="text" maxlength="20" minlength="4"  required /> <!-- entre 4 et 20 caractères -->	
-				Le nom d'utilisateur vous permettera de vous authentifier une fois votre compte créé, par défaut, il n'apparait pas sur votre profil.
+				<p id="login-note"> Le nom d'utilisateur vous permettera de vous authentifier une fois votre compte créé, par défaut, il n'apparait pas sur votre profil. </p>
 				</p> <!-- il faudra vérifier que ce login n'existe pas déjà -->
 
 
@@ -95,23 +95,16 @@
 							}
 						?>
 					</select>
-
 				</p>
 				
-				<p>	Genre : <br>
+				<p id="sexe">Sexe : </p>
+
 					<label for="homme"> Homme </label>
 					<input type="radio" id="homme" name="genre" value="homme" >
 
-					 
 					<label for="femme"> Femme </label>
 					<input type="radio" id="femme" name="genre" value="femme" >
-
-					
-					<label for="nonbi"> Non binaire </label>
-					<input type="radio" id="nonbi" name="genre" value="nonbi" >
-
 				</p>
-
 
 				<p>	
 					<button id="envoi" name="envoi" type="submit" value="envoi"> S'inscrire </button> 

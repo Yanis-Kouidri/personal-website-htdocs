@@ -42,7 +42,7 @@
 			?>
 
 		</header>
-	<h2> Les posts </h2>	
+		<h2 class="post-title">Les posts</h2>	
 <?php
 	if ($_GET) {
 		if ($_GET['msg'] == "no_admin_friend" ) {

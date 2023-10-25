@@ -43,8 +43,8 @@
 	</head>
 	<body>
 	<?php include('./Includes/nav.html'); ?>
-			<p>Vous pouvez poster sur la page principale ici</p>
-			<form method="POST" action="post.php">
+			<h1 class="message">Vous pouvez poster sur la page principale ici</h1>
+			<form id="post-form" method="POST" action="post.php">
 				<p>
 					<textarea id="text" name="text" type="text" maxlength="20000" rows="10" cols="50"  placeholder="Quoi de neuf ?" required></textarea>
 				</p>
