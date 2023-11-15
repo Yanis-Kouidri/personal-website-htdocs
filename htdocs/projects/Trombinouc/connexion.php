@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <?php include('./Includes/head.html'); ?>
     <title>Connexion</title>
 </head>
 <body>
     <header>
         <p>Connexion à Trombinouc !</p>
+        <?php include('./Includes/nav.html'); ?>
     </header>
 
     <section>
@@ -18,13 +16,16 @@
         <form method="POST" action="connecte.php">
 
                 <?php
-                    if ($_GET["msg"] == "wrong") {
-                        echo "<p><strong>Mauvais nom d'utilisateur ou mot de passe.</strong></p>";
+                    if ($_GET) {
+                        if ($_GET["msg"] == "wrong") {
+                            echo "<p><strong>Mauvais nom d'utilisateur ou mot de passe.</strong></p>";
+                        }
+    
+                        if ($_GET["msg"] == "nonco") {
+                            echo "<p><strong> Vous devez être connecté pour acceder à la page précédente </strong></p>"; // Message affiché si l'utilisateur tente de d'acceder à la page ami par exemple, sans être connecté.
+                        }
                     }
 
-                    if ($_GET["msg"] == "nonco") {
-                        echo "<p><strong> Vous devez être connecté pour acceder à la page précédente </strong></p>"; // Message affiché si l'utilisateur tente de d'acceder à la page ami par exemple, sans être connecté.
-                    }
                 ?>
             <p>
                 <label for="login">Nom d'utilisateur</label>

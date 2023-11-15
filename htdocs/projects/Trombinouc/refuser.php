@@ -6,7 +6,7 @@
 
     $sql = "DELETE FROM FRIENDS WHERE user1 = '".$_POST['ami']."' AND user2 = '". $_SESSION["username"]." ' ";
 
-    $req = $bd->prepare($sql);
+    $req = $dbConnection->prepare($sql);
     
     $req -> execute();
 

@@ -1,22 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="style.css">
-		<title>M2105</title>
+		<?php include('./Includes/head.html'); ?>
+		<title>Inscription</title>
 	</head>
 	<body>
 		<!-- L'en-tête -->
 		<header>
 			<p>Bienvenue sur Trombinouc !</p>
+			<?php include('./Includes/nav.html'); ?>
 		</header>
 				
 		<!-- Le contenu (1 seule section suffit) -->		
 		<section>
 			<h1>Création d'un nouveau compte</h1>
-			<p>Veuillez remplir les champs suivant</p>
-			<form method="POST" action="./inscri.php"> <!-- la méthode d'envoi est POST et c'est envoyé à ./inscri.php -->
-
+			<p>Veuillez remplir les champs suivant :</p>
+			<form id="sign-up" method="POST" action="./inscri.php"> <!-- la méthode d'envoi est POST et c'est envoyé à ./inscri.php -->
 
 				<p>	
 					<label for="prenom"> Prénom </label> 	
@@ -28,7 +27,7 @@
 					<input id="nom" name="nom" type="text" maxlength="30" required />
 				</p>
 <?php
-	if ($_GET['msg'] == 'taken' ){
+	if ($_GET && $_GET['msg'] == 'taken' ){
 		echo "<p> <strong> Le nom d'utilisateur existe déjà, merci d'en choisir un autre. </strong> </p>";
 	}
 ?>
@@ -36,7 +35,7 @@
 
 				<p>	<label for="login">Nom d'utilisateur</label> <!-- doit être unique pour permettre l'autentificaton -->
 					<input id="login" name="login" type="text" maxlength="20" minlength="4"  required /> <!-- entre 4 et 20 caractères -->	
-				Le nom d'utilisateur vous permettera de vous authentifier une fois votre compte créé, par défaut, il n'apparait pas sur votre profil.
+				<p id="login-note"> Le nom d'utilisateur vous permettera de vous authentifier une fois votre compte créé, par défaut, il n'apparait pas sur votre profil. </p>
 				</p> <!-- il faudra vérifier que ce login n'existe pas déjà -->
 
 
@@ -48,7 +47,7 @@
 
 
 <?php
-	if ($_GET['msg'] == 'mdpdiff' ){
+	if ($_GET && $_GET['msg'] == 'mdpdiff' ){
 		echo "<p> <strong> Les mots de passe doivent être identiques. </strong> </p>";
 	}
 ?>
@@ -90,29 +89,22 @@
 					<select name="annee" id="annee" required>
 						<option value=""> Année </option>
 						<?php
-							for ($i=date(Y) ; $i>=1900 ; $i--) { //date(Y) renvoi l'année courante sur complète, alors que date(y) renvoie juste le 2 dernier chiffres 
+							for ($i=date("Y") ; $i>=1900 ; $i--) { //date(Y) renvoi l'année courante sur complète, alors que date(y) renvoie juste le 2 dernier chiffres 
 								//A priori personne n'est né avant 1900 et encore vivant aujourd'hui
 								echo '<option value="'.$i.'"> '.$i.' </option> ' ;
 							}
 						?>
 					</select>
-
 				</p>
 				
-				<p>	Genre : <br>
+				<p id="sexe">Sexe : </p>
+
 					<label for="homme"> Homme </label>
 					<input type="radio" id="homme" name="genre" value="homme" >
 
-					 
 					<label for="femme"> Femme </label>
 					<input type="radio" id="femme" name="genre" value="femme" >
-
-					
-					<label for="nonbi"> Non binaire </label>
-					<input type="radio" id="nonbi" name="genre" value="nonbi" >
-
 				</p>
-
 
 				<p>	
 					<button id="envoi" name="envoi" type="submit" value="envoi"> S'inscrire </button> 

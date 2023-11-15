@@ -69,4 +69,19 @@ function afficheType ($repertoire, $type) {	//Fonction qui permet d'afficher une
 
 }
 
+function afficherRepertoire($repertoire) {
+    // Liste tous les fichiers avec l'extension .html dans le répertoire
+    $fichiers = glob($repertoire . '*.html');
+
+    // Parcours des fichiers HTML et affichage avec des liens
+    foreach ($fichiers as $fichier) {
+        // Obtention du nom du fichier
+        $nomFichier = basename($fichier);
+
+        // Création d'un lien vers le fichier HTML
+        echo '<li><a href="' . $repertoire . $nomFichier . '">' . $nomFichier . '</a></li>';
+    }
+}
+
+
 ?>

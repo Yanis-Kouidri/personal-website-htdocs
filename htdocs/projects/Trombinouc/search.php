@@ -14,24 +14,25 @@
 <html lang="fr">
 
 	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="style.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<?php include('./Includes/head.html'); ?>
 		<title> Trombinouc : Recherche </title>
 	</head>
 
 	<body>
 		<header>
 			<p> Trombinouc : Recherche </p>
-			<?php 
-				if($_GET['msg'] == "dejaamis" ) {
-					echo "<h2> Vous êtes déjà amis ! </h2>";
+			<?php
+				if ($_GET) {
+					if($_GET['msg'] == "dejaamis" ) {
+						echo "<h2> Vous êtes déjà amis ! </h2>";
+					}
+					if($_GET['msg'] == "amis" ) {
+						echo "<h2> Demande d'ami envoyée ! </h2>";
+					}
 				}
-				if($_GET['msg'] == "amis" ) {
-					echo "<h2> Demande d'ami envoyée ! </h2>";
-				}
+
 			?>
-			<a href="main.php">Home</a>
+			<?php include('./Includes/nav.html') ?>
 		</header>
 
 		
@@ -54,11 +55,11 @@
 				//print_r($_POST);   //Pour le déboguage
 				//echo "</pre>";
 				
-				if ($_POST['rechercher'] == "search" ) {  		//Si on passe par le formulaire de recherche alors :
+				if ($_POST && $_POST['rechercher'] == "search" ) {  		//Si on passe par le formulaire de recherche alors :
 
 					$sql = "SELECT name, last_name, username FROM USERS ";
 					$sql = $sql." WHERE name LIKE :prenom OR last_name LIKE :nom ";
-					$req = $bd-> prepare($sql);
+					$req = $dbConnection-> prepare($sql);
 					$marqueurs = array("prenom" => "%{$_POST['recherche']}%", "nom" => "%{$_POST['recherche']}%" ); //les pourcentages permettent de d'élargir la recherche = à * dans linux
 					$req->execute($marqueurs);
 					$friend = $req -> fetchall();
@@ -87,13 +88,12 @@
 
 				else {			//Sinon on affiche tous les utilisateurs
 					$sql = "SELECT name, last_name, username FROM USERS";
-					$req = $bd-> prepare($sql);
+					$req = $dbConnection-> prepare($sql);
 					$req->execute();
 					$friend = $req -> fetchall();
 					$req -> closeCursor();
-					//echo "<pre>";
-					//print_r($friend);   //Pour le déboguage
-					//echo "</pre>";
+					# debug($friend);   //Pour le déboguage
+
 					
 
 					echo "Tous les utilisateurs de Trombinouc";

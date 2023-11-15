@@ -12,7 +12,7 @@
 	$sql = $sql.'INNER JOIN FRIENDS ON username = user1 OR username = user2 '; 
 	$sql = $sql.'WHERE admin = 1 AND pending = 0 AND (user1 = \'' .$_SESSION["username"]. '\' OR user2 = \''.$_SESSION["username"].'\')';
 #	echo $sql;
-	$req = $bd->prepare($sql);
+	$req = $dbConnection->prepare($sql);
 	$req -> execute();
 	$enreg = $req -> fetchall();
 	$req -> closeCursor();
@@ -21,33 +21,30 @@
 	$sql = 'SELECT admin FROM USERS ';
 	$sql = $sql.'WHERE username = \''.$_SESSION["username"].'\'';
 #	echo $sql;
-	$req = $bd->prepare($sql);
+	$req = $dbConnection->prepare($sql);
 	$req -> execute();
 	$admin = $req -> fetchall();
 	$req -> closeCursor();
 
 #	debug($admin);
 
-	if ($enreg[0] == null && $admin[0]["admin"] == 0){
-		header('Location:./main.php?msg=no_admin_friend');
+	if ($enreg == null && $admin[0]["admin"] == 0){
+		header('Location:./index.php?msg=no_admin_friend');
 		exit();
 	} 
 	
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style.css">
+		<?php include('./Includes/head.html'); ?>
 		<title>Poster</title>
 	</head>
 	<body>
-	<a href="main.php">Home</a>
-			<p>Vous pouvez poster sur la page principale ici</p>
-			<form method="POST" action="post.php">
+	<?php include('./Includes/nav.html'); ?>
+			<h1 class="message">Vous pouvez poster sur la page principale ici</h1>
+			<form id="post-form" method="POST" action="post.php">
 				<p>
 					<textarea id="text" name="text" type="text" maxlength="20000" rows="10" cols="50"  placeholder="Quoi de neuf ?" required></textarea>
 				</p>
