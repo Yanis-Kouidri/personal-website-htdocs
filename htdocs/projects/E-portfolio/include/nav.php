@@ -16,6 +16,7 @@
             </button>
             <div class="dropdown-content">
                 <a href="professional_engagement.php"> My engagements </a>
+                <a href="./medias/Others/career_plan_infographic.pdf"> My career plan </a>
                 <a href="./medias/Others/CV_Yanis_Kouidri_English.pdf"> CV </a>
                 <a href="https://www.linkedin.com/in/yanis-kouidri/"> Linkedin </a>
                 <a href="https://www.kouidri.fr"> Personal website </a>
