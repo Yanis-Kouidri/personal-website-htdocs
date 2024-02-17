@@ -197,6 +197,25 @@ header {
         font-size: 14px;
     }
 }
+
+/* Styles pour la section de liens (about.php) */
+#liens {
+    text-align: center; /* Centre le texte */
+}
+
+#liens a {
+    display: inline-block; /* Permet d'appliquer des marges et du padding */
+    margin: 10px; /* Espace autour des liens */
+    font-size: 20px; /* Taille du texte */
+    color: #007bff; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+#liens i {
+    margin-right: 5px; /* Espace entre l'icône et le texte */
+    font-size: 24px; /* Taille de l'icône */
+}
+
   
 /* Style du footer */
 footer {
